@@ -1,0 +1,1337 @@
+
+/* =========================================================
+   GOLDEN LEGACY — VIDEOS
+   File: assets/css/videos.css
+   Purpose: Video gallery, thumbnails, and video cards
+   Theme: Obsidian Black + Metallic Gold
+========================================================= */
+
+
+/* =========================================================
+   1. VIDEOS SECTION
+========================================================= */
+
+.videos-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 6%;
+    overflow: hidden;
+
+    background: var(--color-background, #080808);
+    isolation: isolate;
+}
+
+.videos-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(212, 175, 55, 0.06),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(212, 175, 55, 0.04),
+            transparent 35%
+        );
+}
+
+.videos-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   2. VIDEOS HEADER
+========================================================= */
+
+.videos-header {
+    max-width: 750px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.videos-header .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+
+    color: var(--color-gold, #d4af37);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
+
+.videos-header .section-title {
+    margin-bottom: 24px;
+
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.videos-header .section-title span {
+    color: var(--color-gold, #d4af37);
+}
+
+.videos-header .section-description {
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   3. VIDEO FILTERS
+========================================================= */
+
+.video-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.video-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.video-filter:hover {
+    color: var(--color-gold, #d4af37);
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+}
+
+.video-filter.active,
+.video-filter[aria-pressed="true"] {
+    color: #080808;
+    background: var(--color-gold, #d4af37);
+    border-color: var(--color-gold, #d4af37);
+}
+
+
+/* =========================================================
+   4. VIDEO GRID
+========================================================= */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+
+    width: 100%;
+}
+
+.video-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 18px;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(212, 175, 55, 0.6);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(212, 175, 55, 0.06);
+}
+
+
+/* =========================================================
+   5. VIDEO THUMBNAIL
+========================================================= */
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    background: #111;
+}
+
+.video-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(25%);
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.8s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.07);
+    filter: grayscale(0%);
+}
+
+
+/* Thumbnail overlay */
+
+.video-thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.15) 45%,
+        rgba(0, 0, 0, 0.6)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   6. VIDEO PLAY BUTTON
+========================================================= */
+
+.video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 68px;
+
+    color: #080808;
+    background: var(--color-gold, #d4af37);
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.video-play-button::before {
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    margin-left: 5px;
+
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #080808;
+}
+
+.video-play-button:hover {
+    background: #f5d76e;
+
+    box-shadow:
+        0 0 0 10px rgba(212, 175, 55, 0.12),
+        0 0 35px rgba(212, 175, 55, 0.4);
+
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+/* =========================================================
+   7. VIDEO DURATION
+========================================================= */
+
+.video-duration {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2;
+
+    padding: 6px 10px;
+
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 5px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================================
+   8. VIDEO CATEGORY BADGE
+========================================================= */
+
+.video-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 13px;
+
+    color: var(--color-gold, #d4af37);
+    background: rgba(8, 8, 8, 0.8);
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   9. VIDEO INFORMATION
+========================================================= */
+
+.video-info {
+    padding: 25px;
+}
+
+.video-title {
+    margin: 0 0 12px;
+
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+}
+
+.video-description {
+    margin: 0 0 20px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.video-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.75rem;
+}
+
+.video-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.video-meta span + span::before {
+    content: "•";
+    color: var(--color-gold, #d4af37);
+}
+
+
+/* =========================================================
+   10. FEATURED VIDEO
+========================================================= */
+
+.video-card.featured {
+    grid-column: span 2;
+}
+
+.video-card.featured .video-thumbnail {
+    aspect-ratio: 16 / 9;
+}
+
+.video-card.featured .video-title {
+    font-size: 1.6rem;
+}
+
+
+/* =========================================================
+   11. VIDEO PLAYER SECTION
+========================================================= */
+
+.video-player-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 6%;
+
+    background: var(--color-background, #080808);
+}
+
+.video-player-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    background: #000;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.video-player-wrapper video,
+.video-player-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    object-fit: contain;
+}
+
+.video-player-title {
+    margin-top: 28px;
+
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.video-player-description {
+    max-width: 800px;
+    margin-top: 16px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   12. VIDEO EMPTY / LOADING STATES
+========================================================= */
+
+.video-loading {
+    display: grid;
+    place-items: center;
+
+    min-height: 250px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.video-empty {
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    text-align: center;
+
+    border: 1px dashed rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   13. VIDEO FILTER STATES
+   Requires videos.js
+========================================================= */
+
+.video-card.is-hidden {
+    display: none;
+}
+
+.video-card.is-filtering-out {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.video-card.is-filtering-in {
+    animation: video-card-reveal 0.5s ease both;
+}
+
+@keyframes video-card-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   14. VIDEO SCROLL REVEAL
+   Requires scroll-engine.js
+========================================================= */
+
+.video-card.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.video-card.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   15. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .videos-section {
+        padding: 100px 5%;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .video-card.featured {
+        grid-column: span 2;
+    }
+
+    .videos-header {
+        margin-bottom: 50px;
+    }
+
+    .video-info {
+        padding: 22px;
+    }
+}
+
+
+/* =========================================================
+   16. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .videos-section {
+        padding: 75px 5%;
+    }
+
+    .videos-header {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .videos-header .section-title {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+    }
+
+    .videos-header .section-description {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .video-filters {
+        justify-content: flex-start;
+        gap: 9px;
+
+        margin-bottom: 30px;
+    }
+
+    .video-filter {
+        padding: 10px 17px;
+        font-size: 0.75rem;
+    }
+
+    .video-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .video-card.featured {
+        grid-column: span 1;
+    }
+
+    .video-card.featured .video-title {
+        font-size: 1.3rem;
+    }
+
+    .video-play-button {
+        width: 55px;
+        height: 55px;
+    }
+
+    .video-play-button::before {
+        border-top-width: 8px;
+        border-bottom-width: 8px;
+        border-left-width: 12px;
+    }
+
+    .video-info {
+        padding: 20px;
+    }
+
+    .video-title {
+        font-size: 1.15rem;
+    }
+
+    .video-description {
+        font-size: 0.85rem;
+    }
+
+    .video-player-section {
+        padding: 60px 5%;
+    }
+
+    .video-player-wrapper {
+        border-radius: 10px;
+    }
+}
+
+
+/* =========================================================
+   17. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .video-filter {
+        padding: 9px 14px;
+        font-size: 0.7rem;
+    }
+
+    .video-info {
+        padding: 18px;
+    }
+
+    .video-title {
+        font-size: 1.05rem;
+    }
+
+    .video-meta {
+        font-size: 0.7rem;
+    }
+
+    .video-category {
+        top: 10px;
+        left: 10px;
+
+        padding: 6px 10px;
+        font-size: 0.6rem;
+    }
+
+    .video-duration {
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+
+/* =========================================================
+   18. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .video-card,
+    .video-thumbnail img,
+    .video-play-button,
+    .video-filter {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .video-card.reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   GOLDEN LEGACY — VIDEOS.CSS COMPATIBILITY & ACCESSIBILITY
+   Additive fixes for the current HTML, variables.css,
+   mobile layouts, keyboard users, and reduced-motion users.
+========================================================= */
+
+/* Use the design-system token names defined in variables.css. */
+.videos-section,
+.video-player-section {
+    background-color: var(--color-obsidian, #080808);
+    color: var(--color-text, #f5f0df);
+}
+
+.videos-header .section-title,
+.video-title,
+.video-player-title {
+    color: var(--color-text, #f5f0df);
+}
+
+.videos-header .section-description,
+.video-description,
+.video-meta,
+.video-player-description,
+.video-loading,
+.video-empty {
+    color: var(--color-text-muted, #a8a8a8);
+}
+
+/* Keep video grids from causing horizontal overflow. */
+.videos-container,
+.video-grid,
+.video-card,
+.video-info {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.video-card {
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    max-width: 100%;
+}
+
+/* If a thumbnail is a link or button, retain visible keyboard focus. */
+.video-card a:focus-visible,
+.video-card button:focus-visible,
+.video-filter:focus-visible,
+.video-play-button:focus-visible {
+    outline: var(--focus-outline, 2px solid #d4af37);
+    outline-offset: var(--focus-offset, 4px);
+}
+
+/* Ensure the play control remains above thumbnail overlays. */
+.video-play-button {
+    appearance: none;
+    -webkit-appearance: none;
+    z-index: 3;
+}
+
+/* Provide a useful interaction state for touch devices. */
+@media (hover: none) and (pointer: coarse) {
+    .video-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .video-card:hover .video-thumbnail img {
+        transform: none;
+        filter: grayscale(25%);
+    }
+
+    .video-play-button:hover {
+        transform: translate(-50%, -50%);
+        box-shadow: none;
+    }
+
+    .video-filter:hover {
+        transform: none;
+    }
+}
+
+/* Avoid hidden reveal cards remaining invisible if JS is unavailable,
+   while preserving the existing reveal behavior when JS adds classes. */
+@media (prefers-reduced-motion: reduce) {
+    .video-card.reveal,
+    .video-card.reveal.is-visible,
+    .video-card.is-filtering-out,
+    .video-card.is-filtering-in {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .video-card.is-filtering-out {
+        pointer-events: auto;
+    }
+}
+
+/* Smaller phones: prevent filter controls from overflowing. */
+@media (max-width: 360px) {
+    .videos-section {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .video-filters {
+        gap: 8px;
+    }
+
+    .video-filter {
+        max-width: 100%;
+        padding: 9px 12px;
+        white-space: normal;
+    }
+
+    .video-info {
+        padding: 16px;
+    }
+}
+
+
+/* =====================================================
+   VIDEOS PAGE — LAYOUT CORRECTION
+   Fixes: left-aligned hero, oversized headings,
+   missing content spacing, and horizontal overflow.
+   ===================================================== */
+
+/* Prevent page-level horizontal overflow */
+body.videos-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.videos-page main {
+    width: 100%;
+    min-width: 0;
+    overflow: clip;
+}
+
+.videos-page main section {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* -------------------------
+   VIDEO HERO
+------------------------- */
+
+.videos-page .videos-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    min-height: min(850px, calc(100svh - 90px));
+    padding: clamp(100px, 13vh, 160px)
+             clamp(24px, 8vw, 140px)
+             110px;
+
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.videos-page .videos-hero-background,
+.videos-page .videos-hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.videos-page .videos-hero-background {
+    z-index: -2;
+    overflow: hidden;
+}
+
+.videos-page .videos-hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.videos-page .videos-hero-overlay {
+    z-index: -1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 8, 8, 0.96) 0%,
+            rgba(8, 8, 8, 0.78) 48%,
+            rgba(8, 8, 8, 0.35) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #080808 0%,
+            transparent 45%
+        );
+}
+
+/* Hero content must stay centered inside a readable width */
+.videos-page .videos-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.videos-page .videos-hero-content .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 34px;
+
+    font-size: clamp(11px, 0.8vw, 14px);
+    line-height: 1.6;
+    letter-spacing: 0.22em;
+    overflow-wrap: anywhere;
+}
+
+.videos-page .videos-hero-title {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 30px;
+
+    font-family: "Cinzel", "Cormorant Garamond", serif;
+    font-size: clamp(56px, 8vw, 120px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.videos-page .videos-hero-title span {
+    display: block;
+    color: var(--color-gold, #d4af37);
+}
+
+.videos-page .videos-hero-description {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 0 36px;
+
+    font-size: clamp(15px, 1.2vw, 19px);
+    line-height: 1.9;
+    font-weight: 400;
+
+    color: var(--color-text-muted, #a7a7a7);
+    overflow-wrap: break-word;
+}
+
+.videos-page .videos-hero-content .gold-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    max-width: 100%;
+    min-height: 54px;
+    padding: 16px 28px;
+
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.videos-page .videos-hero-footer {
+    position: absolute;
+    right: clamp(24px, 8vw, 140px);
+    bottom: 32px;
+    left: clamp(24px, 8vw, 140px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+
+    color: var(--color-text-muted, #a7a7a7);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+/* -------------------------
+   INTRODUCTION
+------------------------- */
+
+.videos-page .videos-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(180px, 0.5fr);
+    align-items: center;
+    gap: clamp(40px, 8vw, 140px);
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+    padding: clamp(80px, 10vw, 150px)
+             clamp(24px, 6vw, 100px);
+
+    box-sizing: border-box;
+}
+
+.videos-page .videos-intro-content {
+    width: 100%;
+    max-width: 800px;
+    min-width: 0;
+}
+
+.videos-page .videos-intro .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+
+    margin: 0 0 30px;
+
+    font-size: clamp(11px, 0.8vw, 14px);
+    line-height: 1.6;
+    letter-spacing: 0.2em;
+}
+
+.videos-page .videos-intro .section-title {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 28px;
+
+    font-family: "Cinzel", "Cormorant Garamond", serif;
+    font-size: clamp(38px, 5vw, 76px);
+    line-height: 1.12;
+    font-weight: 600;
+
+    overflow-wrap: break-word;
+}
+
+.videos-page .videos-intro .section-title span {
+    color: var(--color-gold, #d4af37);
+}
+
+.videos-page .videos-intro .section-description {
+    max-width: 650px;
+    margin: 0;
+
+    font-size: clamp(15px, 1.1vw, 18px);
+    line-height: 1.9;
+    color: var(--color-text-muted, #a7a7a7);
+}
+
+.videos-page .videos-intro-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    min-width: 0;
+    text-align: center;
+}
+
+.videos-page .videos-emblem {
+    display: block;
+    width: min(100%, 200px);
+    height: auto;
+    object-fit: contain;
+}
+
+.videos-page .videos-intro-mark span {
+    max-width: 220px;
+    font-size: 10px;
+    line-height: 1.8;
+    letter-spacing: 0.2em;
+    color: var(--color-gold, #d4af37);
+}
+
+/* -------------------------
+   SECTION SPACING
+------------------------- */
+
+.videos-page .section-padding {
+    width: 100%;
+    padding: clamp(75px, 9vw, 130px)
+             clamp(24px, 6vw, 100px);
+
+    box-sizing: border-box;
+}
+
+.videos-page .featured-film-section,
+.videos-page .film-archive-section {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.videos-page .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 35px;
+
+    width: 100%;
+    margin: 0 auto 50px;
+}
+
+.videos-page .section-heading-content {
+    width: 100%;
+    max-width: 850px;
+    min-width: 0;
+}
+
+.videos-page .section-heading .section-title {
+    font-size: clamp(36px, 4.5vw, 68px);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+.videos-page .section-description {
+    max-width: 650px;
+    line-height: 1.85;
+}
+
+.videos-page .featured-film-card {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.videos-page .featured-film-thumbnail {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.videos-page .featured-film-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.videos-page .film-archive-section {
+    scroll-margin-top: 100px;
+}
+
+/* -------------------------
+   TABLETS
+------------------------- */
+
+@media (max-width: 900px) {
+    .videos-page .videos-hero {
+        min-height: 760px;
+        padding: 110px 6vw 110px;
+    }
+
+    .videos-page .videos-hero-title {
+        font-size: clamp(54px, 10vw, 90px);
+    }
+
+    .videos-page .videos-intro {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 55px;
+    }
+
+    .videos-page .videos-intro-mark {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .videos-page .videos-emblem {
+        width: 100px;
+    }
+
+    .videos-page .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 600px) {
+    .videos-page .videos-hero {
+        min-height: 700px;
+        min-height: min(760px, calc(100svh - 70px));
+
+        padding: 100px 24px 100px;
+    }
+
+    .videos-page .videos-hero-title {
+        font-size: clamp(46px, 12vw, 68px);
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+    }
+
+    .videos-page .videos-hero-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .videos-page .videos-hero-footer {
+        right: 24px;
+        left: 24px;
+        bottom: 22px;
+        gap: 12px;
+        font-size: 8px;
+        letter-spacing: 0.12em;
+    }
+
+    .videos-page .videos-intro,
+    .videos-page .section-padding {
+        padding: 75px 24px;
+    }
+
+    .videos-page .videos-intro .section-title {
+        font-size: clamp(36px, 9vw, 52px);
+    }
+
+    .videos-page .videos-intro-mark {
+        gap: 20px;
+    }
+
+    .videos-page .videos-emblem {
+        width: 75px;
+    }
+
+    .videos-page .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .videos-page .section-heading .section-title {
+        font-size: clamp(32px, 8vw, 46px);
+    }
+}
+
+/* -------------------------
+   SMALL PHONES
+------------------------- */
+
+@media (max-width: 380px) {
+    .videos-page .videos-hero {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .videos-page .videos-hero-title {
+        font-size: 44px;
+    }
+
+    .videos-page .videos-hero-footer {
+        right: 18px;
+        left: 18px;
+        font-size: 7px;
+    }
+
+    .videos-page .videos-intro,
+    .videos-page .section-padding {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+}
+
+/* -------------------------
+   REDUCED MOTION
+------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .videos-page .videos-hero *,
+    .videos-page .videos-intro *,
+    .videos-page .featured-film-section *,
+    .videos-page .film-archive-section * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}

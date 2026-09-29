@@ -1,0 +1,565 @@
+
+/* =========================================
+   GOLDEN LEGACY
+   TYPOGRAPHY SYSTEM
+   ========================================= */
+
+
+/* ---------- 1. FONT IMPORTS ---------- */
+
+/*
+   Fonts are loaded through the Google Fonts
+   link in the HTML document's <head>.
+   This file contains styling only.
+*/
+
+
+/* ---------- 2. GLOBAL TYPOGRAPHY ---------- */
+
+html {
+    font-size: 16px;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-normal);
+    letter-spacing: var(--tracking-normal);
+    color: var(--color-text);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    margin: 0 0 var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-light);
+    line-height: var(--line-relaxed);
+    color: var(--color-text-muted);
+}
+
+
+/* ---------- 3. HEADING SYSTEM ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-tight);
+    color: var(--color-gold-light);
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: var(--text-display-lg);
+    letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+    font-size: var(--text-display-md);
+    letter-spacing: var(--tracking-tight);
+}
+
+h3 {
+    font-size: var(--text-display-sm);
+    letter-spacing: 0.01em;
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    letter-spacing: 0.04em;
+}
+
+h5 {
+    font-size: var(--text-xl);
+    letter-spacing: 0.06em;
+}
+
+h6 {
+    font-size: var(--text-lg);
+    letter-spacing: 0.08em;
+}
+
+
+/* ---------- 4. LUXURY GOLD TEXT ---------- */
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-gold-light {
+    color: var(--color-gold-light);
+}
+
+.text-gold-bright {
+    color: var(--color-gold-bright);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-subtle {
+    color: var(--color-text-subtle);
+}
+
+
+/* ---------- 5. 3D GOLD TYPOGRAPHY ---------- */
+
+.text-3d-gold {
+    color: var(--color-gold-light);
+
+    text-shadow:
+        0 1px 0 #d4af37,
+        0 2px 0 #b8952d,
+        0 3px 0 #a17e24,
+        0 4px 0 #8a6820,
+        0 5px 0 #6b4f12,
+        0 8px 15px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.text-metallic {
+    color: var(--color-gold-light);
+
+    background: linear-gradient(
+        180deg,
+        #fff4bf 0%,
+        #f8e7a1 20%,
+        #d4af37 45%,
+        #a17e24 65%,
+        #f8e7a1 85%,
+        #8a6820 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    filter: drop-shadow(
+        0 5px 10px rgba(0, 0, 0, 0.5)
+    );
+}
+
+
+/* ---------- 6. DISPLAY TYPOGRAPHY ---------- */
+
+.text-display {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-tight);
+    letter-spacing: var(--tracking-tight);
+}
+
+.text-display-gold {
+    font-family: var(--font-display);
+    font-size: var(--text-display-lg);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-tight);
+    letter-spacing: var(--tracking-tight);
+
+    color: var(--color-gold-light);
+
+    text-shadow: var(--shadow-text-gold);
+}
+
+.text-display-small {
+    font-size: var(--text-display-sm);
+    line-height: var(--line-tight);
+}
+
+
+/* ---------- 7. SECTION EYEBROWS ---------- */
+
+.section-eyebrow {
+    display: inline-block;
+
+    margin-bottom: var(--space-5);
+
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+
+    line-height: var(--line-normal);
+    letter-spacing: var(--tracking-luxury);
+    text-transform: uppercase;
+
+    color: var(--color-gold);
+}
+
+.section-eyebrow::before {
+    content: "";
+    display: inline-block;
+
+    width: 28px;
+    height: 1px;
+
+    margin-right: var(--space-3);
+
+    vertical-align: middle;
+
+    background: var(--color-gold);
+}
+
+
+/* ---------- 8. SECTION TITLES ---------- */
+
+.section-title {
+    margin-bottom: var(--space-6);
+
+    font-family: var(--font-heading);
+    font-size: var(--text-display-md);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-tight);
+
+    color: var(--color-gold-light);
+
+    text-shadow: var(--shadow-text-gold);
+}
+
+.section-description {
+    max-width: 720px;
+
+    font-size: var(--text-lg);
+    font-weight: var(--weight-light);
+    line-height: var(--line-relaxed);
+
+    color: var(--color-text-muted);
+}
+
+
+/* ---------- 9. NAVIGATION TYPOGRAPHY ---------- */
+
+/* Support both legacy and canonical shared navigation class names. */
+.nav-link,
+.navigation-link,
+.nav-links a,
+.navbar .nav-links a {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    transition:
+        color var(--duration-normal) var(--ease-luxury),
+        text-shadow var(--duration-normal) var(--ease-luxury);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.navigation-link:hover,
+.navigation-link:focus-visible,
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.navbar .nav-links a:hover,
+.navbar .nav-links a:focus-visible {
+    color: var(--color-gold-light);
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+.nav-link.active,
+.nav-link[aria-current="page"],
+.navigation-link.active,
+.navigation-link[aria-current="page"],
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+    color: var(--color-gold);
+}
+
+
+/* ---------- 10. MEMBER TYPOGRAPHY ---------- */
+
+.member-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: var(--weight-bold);
+    line-height: var(--line-tight);
+
+    color: var(--color-gold-light);
+
+    text-shadow: var(--shadow-text-gold);
+}
+
+.member-role {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+
+    color: var(--color-gold);
+}
+
+.member-description {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-light);
+    line-height: var(--line-relaxed);
+
+    color: var(--color-text-muted);
+}
+
+
+/* ---------- 11. TIMELINE TYPOGRAPHY ---------- */
+
+.timeline-date {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+
+    letter-spacing: 0.04em;
+
+    color: var(--color-gold-light);
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+
+    color: var(--color-text);
+}
+
+.timeline-description {
+    font-size: var(--text-sm);
+    line-height: var(--line-relaxed);
+
+    color: var(--color-text-muted);
+}
+
+
+/* ---------- 12. BUTTON TYPOGRAPHY ---------- */
+
+button,
+.button,
+.btn {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.button-gold {
+    color: var(--color-black);
+    font-weight: var(--weight-bold);
+}
+
+
+/* ---------- 13. LINKS AND SELECTION ---------- */
+
+a {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-gold-light);
+}
+
+::selection {
+    color: var(--color-black);
+    background: var(--color-gold);
+}
+
+
+/* ---------- 14. RESPONSIVE TYPOGRAPHY ---------- */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+    }
+
+    h2 {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+    }
+
+    .section-description {
+        font-size: var(--text-base);
+    }
+
+    .section-eyebrow {
+        letter-spacing: 0.18em;
+    }
+
+    .member-name {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .text-display-gold {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: var(--text-sm);
+    }
+
+    p {
+        font-size: var(--text-sm);
+    }
+
+    .section-eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .timeline-title {
+        font-size: var(--text-xl);
+    }
+
+    .text-3d-gold {
+        text-shadow:
+            0 1px 0 #b8952d,
+            0 2px 0 #8a6820,
+            0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+}
+
+
+/* ---------- 15. ACCESSIBILITY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-link,
+    .navigation-link,
+    .nav-links a,
+    .navbar .nav-links a {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   GOLDEN LEGACY
+   TYPOGRAPHY COMPATIBILITY PATCH
+========================================= */
+
+/* Metallic text fallback */
+.text-metallic {
+    color: var(--color-gold-light);
+}
+
+@supports (background-clip: text) {
+    .text-metallic {
+        background: linear-gradient(
+            180deg,
+            #fff4bf 0%,
+            #f8e7a1 20%,
+            #d4af37 45%,
+            #a17e24 65%,
+            #f8e7a1 85%,
+            #8a6820 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+/* Prevent long names and headings from overflowing */
+.member-name,
+.member-profile-title,
+.section-title,
+.timeline-title {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Keep image links from inheriting unwanted text styling */
+a:has(img) {
+    text-decoration: none;
+}
+
+/* Page-specific heading sizing */
+.about-page .about-hero-title {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+.member-profile-page .member-profile-title {
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+.members-page .section-title,
+.album-page .section-title,
+.videos-page .section-title,
+.about-page .section-title {
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
+}
+
+/* Small-screen typography */
+@media (max-width: 480px) {
+    .about-page .about-hero-title {
+        font-size: clamp(2.1rem, 9vw, 3.25rem);
+    }
+
+    .member-profile-page .member-profile-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .section-description {
+        max-width: 100%;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .nav-links a,
+    .navbar .nav-links a {
+        transition: none;
+    }
+}
+
+/* ---------- TYPOGRAPHY SAFETY ---------- */
+
+/* Allow long headings and names to wrap without forcing arbitrary word breaks. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.member-name,
+.member-profile-title,
+.section-title {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* Ensure interactive text remains legible when keyboard-focused. */
+a:focus-visible,
+button:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-offset);
+}

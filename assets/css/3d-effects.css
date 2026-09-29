@@ -1,0 +1,879 @@
+
+/* =========================================================
+   GOLDEN LEGACY — 3D EFFECTS
+   File: assets/css/3d-effects.css
+
+   Features:
+   1. 3D perspective and depth
+   2. Metallic gold 3D typography
+   3. 3D cards and hover effects
+   4. Member Z-axis animation foundation
+   5. Cinematic depth and lighting
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL 3D VARIABLES
+========================================================= */
+
+:root {
+    --perspective-main: 1200px;
+    --perspective-deep: 2000px;
+
+    --depth-near: 100px;
+    --depth-medium: 300px;
+    --depth-far: 600px;
+
+    --gold-3d-front: #fff2a6;
+    --gold-3d-mid: #d4af37;
+    --gold-3d-dark: #8a6710;
+
+    --gold-3d-shadow:
+        0 2px 0 #b38d24,
+        0 4px 0 #8a6710,
+        0 6px 0 #624707,
+        0 12px 20px rgba(0, 0, 0, 0.65);
+
+    --transition-3d:
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.8s ease;
+}
+
+
+/* =========================================================
+   02. PERSPECTIVE CONTAINERS
+========================================================= */
+
+.perspective-container {
+    perspective: var(--perspective-main);
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+}
+
+.perspective-deep {
+    perspective: var(--perspective-deep);
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.perspective-origin-center {
+    perspective-origin: center center;
+}
+
+.perspective-origin-top {
+    perspective-origin: center top;
+}
+
+.perspective-origin-bottom {
+    perspective-origin: center bottom;
+}
+
+
+/* =========================================================
+   03. DEPTH UTILITIES
+========================================================= */
+
+.depth-near {
+    transform: translateZ(var(--depth-near));
+}
+
+.depth-medium {
+    transform: translateZ(var(--depth-medium));
+}
+
+.depth-far {
+    transform: translateZ(var(--depth-far));
+}
+
+.depth-back {
+    transform: translateZ(-200px);
+}
+
+.depth-deep {
+    transform: translateZ(-500px);
+}
+
+.depth-reset {
+    transform: translateZ(0);
+}
+
+
+/* =========================================================
+   04. METALLIC GOLD 3D TEXT
+========================================================= */
+
+.text-3d-gold {
+    color: var(--gold-3d-front);
+
+    text-shadow: var(--gold-3d-shadow);
+
+    transform: translateZ(40px);
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+}
+
+.text-3d-gold-large {
+    color: var(--gold-3d-front);
+
+    text-shadow:
+        0 1px 0 #f8e7a0,
+        0 2px 0 #d4af37,
+        0 4px 0 #b38d24,
+        0 6px 0 #8a6710,
+        0 8px 0 #624707,
+        0 14px 25px rgba(0, 0, 0, 0.8);
+
+    transform: translateZ(80px);
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+}
+
+.text-3d-gold-subtle {
+    color: var(--gold-3d-front);
+
+    text-shadow:
+        0 1px 0 #d4af37,
+        0 3px 8px rgba(212, 175, 55, 0.25);
+
+    transform: translateZ(20px);
+}
+
+
+/* =========================================================
+   05. 3D GOLD GRADIENT TEXT
+========================================================= */
+
+.gold-gradient-3d {
+    background: linear-gradient(
+        180deg,
+        #fff8c9 0%,
+        #f5df83 20%,
+        #d4af37 45%,
+        #b38d24 65%,
+        #8a6710 85%,
+        #f1d778 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(
+        0 8px 12px rgba(0, 0, 0, 0.55)
+    );
+
+    transform: translateZ(40px);
+}
+
+
+/* =========================================================
+   06. 3D HERO CONTENT
+========================================================= */
+
+.hero-3d {
+    position: relative;
+
+    perspective: var(--perspective-deep);
+
+    perspective-origin: center center;
+
+    transform-style: preserve-3d;
+
+    isolation: isolate;
+}
+
+.hero-3d .hero-content {
+    position: relative;
+
+    transform-style: preserve-3d;
+}
+
+.hero-3d .hero-title {
+    position: relative;
+
+    transform: translateZ(100px);
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+}
+
+.hero-3d .hero-description {
+    transform: translateZ(50px);
+}
+
+.hero-3d .hero-button,
+.hero-3d .btn {
+    transform: translateZ(30px);
+
+    transition: var(--transition-3d);
+}
+
+.hero-3d .hero-button:hover,
+.hero-3d .btn:hover {
+    transform: translateZ(60px);
+}
+
+
+/* =========================================================
+   07. 3D CARD EFFECTS
+========================================================= */
+
+.card-3d-container {
+    perspective: var(--perspective-main);
+
+    transform-style: preserve-3d;
+}
+
+.card-3d {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: var(--transition-3d);
+
+    will-change: transform;
+}
+
+.card-3d:hover {
+    transform: translateZ(20px) scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+.card-3d .card-content {
+    position: relative;
+
+    transform: translateZ(25px);
+
+    transform-style: preserve-3d;
+}
+
+.card-3d .card-image {
+    overflow: hidden;
+
+    transform: translateZ(10px);
+}
+
+.card-3d .card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s ease;
+}
+
+.card-3d:hover .card-image img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   08. 3D MEMBER STAGE
+========================================================= */
+
+.members-3d-stage {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    perspective: 1800px;
+
+    perspective-origin: center center;
+
+    transform-style: preserve-3d;
+
+    isolation: isolate;
+}
+
+.members-3d-world {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transform-style: preserve-3d;
+
+    transform: translateZ(0);
+}
+
+
+/* Individual member */
+
+.member-3d {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: min(80vw, 700px);
+
+    transform:
+        translate(-50%, -50%)
+        translateZ(0);
+
+    transform-style: preserve-3d;
+
+    transform-origin: center center;
+
+    backface-visibility: hidden;
+
+    will-change: transform, opacity;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* Active member */
+
+.member-3d.is-active {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    z-index: 2;
+}
+
+
+/* Member visual */
+
+.member-3d .member-visual {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+}
+
+.member-3d .member-image {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    transform: translateZ(30px);
+
+    backface-visibility: hidden;
+}
+
+
+/* Member name */
+
+.member-3d .member-name {
+    position: relative;
+
+    transform: translateZ(80px);
+
+    transform-style: preserve-3d;
+
+    backface-visibility: hidden;
+}
+
+
+/* Member information */
+
+.member-3d .member-info {
+    position: relative;
+
+    transform: translateZ(40px);
+}
+
+
+/* =========================================================
+   09. MEMBER Z-AXIS ANIMATION STATES
+========================================================= */
+
+/*
+   Animation direction:
+   Start close to the camera.
+   Move straight away along the Z-axis.
+   Shrink naturally through perspective.
+   Fade out into the depth.
+
+   No rotation.
+   No horizontal movement.
+   No vertical movement.
+*/
+
+.member-3d.is-entering {
+    animation: member-approach 1.2s
+        cubic-bezier(0.2, 0.65, 0.3, 1)
+        forwards;
+}
+
+.member-3d.is-exiting {
+    animation: member-retreat 2.5s
+        cubic-bezier(0.4, 0, 0.8, 0.5)
+        forwards;
+}
+
+
+/* Enter from camera */
+
+@keyframes member-approach {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            translateZ(1000px);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            translateZ(0);
+    }
+}
+
+
+/* Move away into the screen */
+
+@keyframes member-retreat {
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            translateZ(0);
+    }
+
+    65% {
+        opacity: 0.9;
+
+        transform:
+            translate(-50%, -50%)
+            translateZ(-1200px);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            translateZ(-2000px);
+    }
+}
+
+
+/* =========================================================
+   10. 3D TIMELINE
+========================================================= */
+
+.timeline-3d {
+    position: relative;
+
+    perspective: var(--perspective-main);
+
+    transform-style: preserve-3d;
+}
+
+.timeline-3d .timeline-item {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: var(--transition-3d);
+}
+
+.timeline-3d .timeline-item:hover {
+    transform: translateZ(25px);
+}
+
+.timeline-3d .timeline-content {
+    transform: translateZ(20px);
+
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   11. 3D GALLERY
+========================================================= */
+
+.gallery-3d {
+    perspective: var(--perspective-main);
+
+    transform-style: preserve-3d;
+}
+
+.gallery-3d .gallery-item {
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition: var(--transition-3d);
+
+    overflow: hidden;
+}
+
+.gallery-3d .gallery-item:hover {
+    transform: translateZ(30px) scale(1.025);
+
+    z-index: 2;
+}
+
+.gallery-3d .gallery-item img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+.gallery-3d .gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   12. 3D GOLD BUTTON
+========================================================= */
+
+.btn-3d-gold {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+
+    transform: translateZ(0);
+
+    transition: var(--transition-3d);
+
+    box-shadow:
+        0 4px 0 #8a6710,
+        0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d-gold:hover {
+    transform: translateY(-3px) translateZ(20px);
+
+    box-shadow:
+        0 7px 0 #8a6710,
+        0 15px 30px rgba(212, 175, 55, 0.15);
+}
+
+.btn-3d-gold:active {
+    transform: translateY(2px) translateZ(0);
+
+    box-shadow:
+        0 2px 0 #8a6710,
+        0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   13. CINEMATIC DEPTH LIGHTING
+========================================================= */
+
+.depth-light {
+    position: relative;
+
+    isolation: isolate;
+}
+
+.depth-light::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    z-index: -1;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(212, 175, 55, 0.12) 0%,
+        rgba(212, 175, 55, 0.04) 35%,
+        transparent 70%
+    );
+
+    pointer-events: none;
+
+    transform: translateZ(-100px);
+}
+
+.depth-shadow {
+    filter: drop-shadow(
+        0 25px 35px rgba(0, 0, 0, 0.55)
+    );
+}
+
+
+/* =========================================================
+   14. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card-3d,
+    .gallery-3d .gallery-item,
+    .gallery-3d .gallery-item img,
+    .btn-3d-gold,
+    .member-3d,
+    .timeline-3d .timeline-item {
+        animation: none !important;
+
+        transition: none !important;
+
+        will-change: auto;
+    }
+
+    .card-3d:hover,
+    .gallery-3d .gallery-item:hover,
+    .btn-3d-gold:hover,
+    .timeline-3d .timeline-item:hover {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   15. RESPONSIVE 3D EFFECTS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --perspective-main: 900px;
+        --perspective-deep: 1400px;
+    }
+
+    .text-3d-gold-large {
+        text-shadow:
+            0 1px 0 #f8e7a0,
+            0 2px 0 #d4af37,
+            0 4px 0 #8a6710,
+            0 8px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .member-3d {
+        width: 90vw;
+    }
+
+    .members-3d-stage {
+        min-height: 85vh;
+    }
+
+    .card-3d:hover {
+        transform: translateZ(10px);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .members-3d-stage {
+        min-height: 75vh;
+    }
+
+    .member-3d {
+        width: 94vw;
+    }
+
+}
+
+/* =========================================================
+   16. GOLDEN LEGACY COMPATIBILITY + SAFETY FIXES
+   Additions: reduced-motion visibility, mobile 3D stability,
+   and aliases for the site's existing component classes.
+========================================================= */
+
+/* The homepage uses ordinary member cards, not the 3D stage.
+   Keep their existing card design while enabling subtle depth. */
+.members-grid .member-card {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* The current gallery markup uses .gallery-grid/.gallery-item.
+   Apply 3D perspective only when the explicit gallery-3d class
+   is present, so normal gallery layouts remain unaffected. */
+.gallery-3d .gallery-grid {
+    perspective: var(--perspective-main);
+    transform-style: preserve-3d;
+}
+
+/* Avoid clipped Z-depth elements inside the member stage on
+   narrow screens, while retaining the intended stage viewport. */
+.members-3d-stage {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@media (max-width: 768px) {
+    .members-3d-stage {
+        perspective: 1100px;
+        overflow: clip;
+    }
+
+    .member-3d {
+        max-width: 100%;
+    }
+}
+
+/* Critical accessibility fix: member slides default to opacity:0.
+   If motion is reduced, show them rather than leaving them hidden. */
+@media (prefers-reduced-motion: reduce) {
+    .member-3d,
+    .member-3d.is-entering,
+    .member-3d.is-exiting {
+        animation: none !important;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) translateZ(0) !important;
+    }
+}
+
+/* Prevent hover depth from triggering unwanted movement on
+   touch-first devices. */
+@media (hover: none) {
+    .card-3d:hover,
+    .gallery-3d .gallery-item:hover,
+    .timeline-3d .timeline-item:hover {
+        transform: none;
+    }
+}
+
+
+
+/* =========================================================
+   17. FINAL COMPATIBILITY PATCH
+   Targeted fixes for member visibility, animation transforms,
+   mobile overflow, and touch-device behavior.
+========================================================= */
+
+/* Keep the existing 3D entrance/exit animations in control of
+   transform. Do not add another transform transition to slides. */
+.member-3d {
+    transition: opacity 0.35s ease;
+}
+
+/* Ensure only the active member is interactive when motion is
+   enabled. JavaScript can still add/remove .is-active. */
+@media (prefers-reduced-motion: no-preference) {
+    .member-3d {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .member-3d.is-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Reduced-motion fallback: show the active slide only, without
+   running animated movement. This avoids exposing every hidden
+   slide at once. */
+@media (prefers-reduced-motion: reduce) {
+    .member-3d {
+        animation: none !important;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) translateZ(0) !important;
+    }
+
+    .member-3d.is-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .member-3d.is-entering,
+    .member-3d.is-exiting {
+        animation: none !important;
+    }
+
+    .card-3d,
+    .gallery-3d .gallery-item,
+    .gallery-3d .gallery-item img,
+    .btn-3d-gold,
+    .timeline-3d .timeline-item {
+        animation: none !important;
+        transition: none !important;
+        will-change: auto;
+    }
+}
+
+/* Prefer a stable clipping fallback for mobile browsers. */
+@media (max-width: 768px) {
+    .members-3d-stage {
+        overflow: hidden;
+        overflow: clip;
+        -webkit-perspective: 1100px;
+        perspective: 1100px;
+    }
+
+    .member-3d {
+        max-width: 100%;
+    }
+}
+
+/* Avoid forced 3D hover motion on touch-only devices. */
+@media (hover: none), (pointer: coarse) {
+    .card-3d:hover,
+    .gallery-3d .gallery-item:hover,
+    .timeline-3d .timeline-item:hover,
+    .btn-3d-gold:hover {
+        transform: none;
+    }
+
+    .card-3d:hover .card-image img,
+    .gallery-3d .gallery-item:hover img {
+        transform: none;
+    }
+}
+
+/* Respect reduced motion for the standalone 3D hero and buttons. */
+@media (prefers-reduced-motion: reduce) {
+    .hero-3d .hero-button,
+    .hero-3d .btn,
+    .hero-3d .hero-button:hover,
+    .hero-3d .btn:hover,
+    .btn-3d-gold:hover,
+    .btn-3d-gold:active {
+        transform: none !important;
+    }
+}

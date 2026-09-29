@@ -1,0 +1,244 @@
+/* =========================================
+   GOLDEN LEGACY
+   GLOBAL DESIGN VARIABLES
+   ========================================= */
+
+:root {
+    /* ---------- 1. COLOR SYSTEM ---------- */
+
+    /* Luxury black backgrounds */
+    --color-black: #050505;
+    --color-obsidian: #080808;
+    --color-dark: #0d0d0d;
+    --color-dark-soft: #111111;
+
+    /* Card backgrounds */
+    --color-card: #121212;
+    --color-card-light: #191919;
+    --color-card-hover: #202020;
+
+    /* Metallic gold */
+    --color-gold: #d4af37;
+    --color-gold-light: #f8e7a1;
+    --color-gold-bright: #ffe9a6;
+    --color-gold-dark: #8a6820;
+    --color-gold-deep: #6b4f12;
+
+    /* Text colors */
+    --color-text: #f5f0df;
+    --color-text-light: #ffffff;
+    --color-text-muted: #a8a8a8;
+    --color-text-subtle: #777777;
+
+    /* Borders */
+    --color-border: rgba(212, 175, 55, 0.18);
+    --color-border-light: rgba(212, 175, 55, 0.35);
+    --color-border-strong: rgba(212, 175, 55, 0.6);
+
+    /* Overlays */
+    --color-overlay: rgba(0, 0, 0, 0.65);
+    --color-overlay-heavy: rgba(0, 0, 0, 0.88);
+    --color-gold-overlay: rgba(212, 175, 55, 0.08);
+
+    /* Semantic aliases: use these in components when applicable */
+    --color-background: var(--color-obsidian);
+    --color-background-elevated: var(--color-dark-soft);
+    --color-surface: var(--color-card);
+    --color-surface-hover: var(--color-card-hover);
+    --color-accent: var(--color-gold);
+    --color-accent-hover: var(--color-gold-light);
+
+    /* ---------- 2. TYPOGRAPHY ---------- */
+
+    /* Font families */
+    --font-heading: "Cinzel", serif;
+    --font-body: "Montserrat", sans-serif;
+    --font-display: "Cinzel", serif;
+
+    /* Font weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 900;
+
+    /* Font sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+
+    /* Responsive display sizes */
+    --text-display-sm: clamp(2rem, 4vw, 3.5rem);
+    --text-display-md: clamp(2.5rem, 5.5vw, 5rem);
+    --text-display-lg: clamp(3rem, 7vw, 6.5rem);
+
+    /* Line heights */
+    --line-tight: 1.1;
+    --line-normal: 1.6;
+    --line-relaxed: 1.9;
+
+    /* Letter spacing */
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.12em;
+    --tracking-wider: 0.2em;
+    --tracking-luxury: 0.3em;
+
+    /* ---------- 3. SPACING AND CONTAINERS ---------- */
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-14: 56px;
+    --space-16: 64px;
+    --space-18: 72px;
+    --space-20: 80px;
+    --space-24: 96px;
+    --space-32: 128px;
+
+    /* Section spacing */
+    --section-space: clamp(64px, 9vw, 140px);
+    --section-space-small: clamp(40px, 6vw, 80px);
+
+    /* Container widths */
+    --container-sm: 640px;
+    --container-md: 900px;
+    --container-lg: 1200px;
+    --container-xl: 1440px;
+    --container-padding: clamp(20px, 5vw, 80px);
+
+    /* ---------- 4. BORDERS AND RADIUS ---------- */
+
+    --border-width: 1px;
+    --border-width-strong: 2px;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-round: 50%;
+
+    /* ---------- 5. SHADOWS ---------- */
+
+    /* Gold glow */
+    --shadow-gold-sm: 0 0 10px rgba(212, 175, 55, 0.15);
+    --shadow-gold-md: 0 0 25px rgba(212, 175, 55, 0.2);
+    --shadow-gold-lg: 0 0 50px rgba(212, 175, 55, 0.3);
+
+    /* Black depth */
+    --shadow-dark-sm: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --shadow-dark-md: 0 15px 40px rgba(0, 0, 0, 0.6);
+    --shadow-dark-lg: 0 25px 80px rgba(0, 0, 0, 0.8);
+
+    /* Gold text depth */
+    --shadow-text-gold:
+        0 2px 0 #8a6820,
+        0 4px 0 #6b4f12,
+        0 8px 20px rgba(0, 0, 0, 0.8);
+
+    /* Image and card effects */
+    --shadow-image: 0 15px 40px rgba(0, 0, 0, 0.55);
+    --shadow-card-hover:
+        0 20px 60px rgba(0, 0, 0, 0.65),
+        0 0 25px rgba(212, 175, 55, 0.08);
+
+    /* ---------- 6. 3D AND PERSPECTIVE ---------- */
+
+    --perspective-near: 600px;
+    --perspective-medium: 1200px;
+    --perspective-far: 2000px;
+    --perspective-cinematic: 3000px;
+
+    --depth-near: 200px;
+    --depth-medium: 800px;
+    --depth-far: 2000px;
+    --depth-background: 4000px;
+
+    --transform-origin-center: center center;
+    --transform-origin-camera: center center -1000px;
+
+    /* ---------- 7. ANIMATION TIMING ---------- */
+
+    --duration-fast: 0.3s;
+    --duration-normal: 0.6s;
+    --duration-slow: 1s;
+    --duration-cinematic: 2s;
+    --duration-epic: 4s;
+
+    --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-dramatic: cubic-bezier(0.7, 0, 0.3, 1);
+
+    --delay-short: 0.2s;
+    --delay-medium: 0.5s;
+    --delay-long: 1s;
+
+    /* ---------- 8. NAVIGATION ---------- */
+
+    --header-height: 100px;
+    --header-height-mobile: 80px;
+
+    /* Aliases retained for compatibility with existing navigation CSS */
+    --nav-height: var(--header-height);
+    --nav-height-mobile: var(--header-height-mobile);
+
+    --nav-gap: 40px;
+    --nav-gap-mobile: 20px;
+    --nav-background: rgba(5, 5, 5, 0.85);
+    --nav-blur: 20px;
+
+    /* ---------- 9. LAYERING AND ACCESSIBILITY ---------- */
+
+    --z-base: 1;
+    --z-content: 10;
+    --z-overlay: 100;
+    --z-header: 1000;
+    --z-dropdown: 1100;
+    --z-lightbox: 2000;
+    --z-loading: 9999;
+
+    --focus-outline: 2px solid var(--color-gold);
+    --focus-offset: 4px;
+
+    /* ---------- 10. RESPONSIVE BREAKPOINT REFERENCE ---------- */
+
+    /*
+       CSS custom properties cannot be used directly in media-query
+       conditions. Keep these reference values synchronized with the
+       literal breakpoints used in the responsive stylesheets.
+    */
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1024px;
+    --breakpoint-desktop: 1440px;
+}
+
+/* Respect users who prefer reduced motion.
+   Component styles should still provide non-animated visible states. */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --duration-fast: 0.01ms;
+        --duration-normal: 0.01ms;
+        --duration-slow: 0.01ms;
+        --duration-cinematic: 0.01ms;
+        --duration-epic: 0.01ms;
+        --delay-short: 0ms;
+        --delay-medium: 0ms;
+        --delay-long: 0ms;
+    }
+}

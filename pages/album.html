@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080808">
+    <meta
+        name="description"
+        content="Explore the photographs, celebrations, adventures, and unforgettable moments of Golden Legacy."
+    >
+
+    <title>Photo Album | Golden Legacy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Visual Effects -->
+    <link rel="stylesheet" href="../assets/css/3d-effects.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+
+    <!-- Shared Navigation -->
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+
+    <!-- Page Components -->
+    <link rel="stylesheet" href="../assets/css/gallery.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+
+    <!-- Responsive Styles (keep last) -->
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/images/branding/favicon.svg"
+    >
+</head>
+
+<body class="album-page" id="top">
+
+    <!-- =========================================
+         LOADING SCREEN
+    ========================================== -->
+    <div
+        class="loading-screen"
+        id="loading-screen"
+        aria-label="Loading Golden Legacy"
+    >
+        <div class="loading-content">
+
+            <div class="loading-emblem">
+                <img
+                    src="../assets/images/branding/emblem.svg"
+                    alt="Golden Legacy Emblem"
+                    class="loading-logo"
+                >
+            </div>
+
+            <h2 class="loading-title">GOLDEN LEGACY</h2>
+
+            <p class="loading-subtitle">
+                EVERY MOMENT BECOMES A LEGACY
+            </p>
+
+            <div class="loading-progress">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- =========================================
+         WEBSITE WRAPPER
+    ========================================== -->
+    <div id="site-wrapper">
+
+        <!-- =====================================
+             SHARED NAVIGATION
+        ====================================== -->
+        <header class="site-header" id="site-header">
+
+            <div class="header-container nav-container">
+
+                <!-- Brand -->
+                <a
+                    href="../index.html"
+                    class="site-logo"
+                    aria-label="Golden Legacy Home"
+                >
+                    <img
+                        src="../assets/images/branding/logo.svg"
+                        alt="Golden Legacy"
+                        class="site-logo-image"
+                    >
+
+                    <span class="site-logo-text">
+                        GOLDEN LEGACY
+                    </span>
+                </a>
+
+
+                <!-- Desktop / Mobile Navigation -->
+                <nav
+                    class="main-navigation nav-links"
+                    id="main-navigation"
+                    aria-label="Main navigation"
+                >
+                    <ul class="navigation-list">
+
+                        <li>
+                            <a
+                                href="../index.html"
+                                class="navigation-link"
+                            >
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="members.html"
+                                class="navigation-link"
+                            >
+                                Members
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="memories.html"
+                                class="navigation-link"
+                            >
+                                Memories
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="album.html"
+                                class="navigation-link active"
+                                aria-current="page"
+                            >
+                                Gallery
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="videos.html"
+                                class="navigation-link"
+                            >
+                                Videos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="about.html"
+                                class="navigation-link"
+                            >
+                                Our Story
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+
+                <!-- Navigation CTA -->
+                <a
+                    href="#album-gallery"
+                    class="header-action"
+                >
+                    <span>Explore Album</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+
+                <!-- Mobile Menu Button -->
+                <button
+                    class="mobile-menu-toggle nav-toggle"
+                    id="mobile-menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="main-navigation"
+                    aria-expanded="false"
+                >
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+        <main>
+
+            <!-- =====================================
+                 ALBUM HERO
+            ====================================== -->
+            <section class="page-hero album-hero">
+
+                <div class="hero-content">
+
+                    <span class="section-eyebrow">
+                        GOLDEN LEGACY
+                        <span aria-hidden="true">•</span>
+                        THE PHOTO ARCHIVE
+                    </span>
+
+                    <h1 class="hero-title">
+                        Every Picture.
+                        <span class="text-gold">
+                            A Story.
+                        </span>
+                    </h1>
+
+                    <p class="hero-description">
+                        A place for the photographs that bring
+                        us back to the laughter, adventures,
+                        celebrations, and friendships we share.
+                    </p>
+
+                    <a
+                        href="#album-gallery"
+                        class="btn btn-primary"
+                    >
+                        Explore the Album
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 ALBUM INTRODUCTION
+            ====================================== -->
+            <section class="section album-intro">
+
+                <div class="section-container">
+
+                    <div class="section-heading">
+
+                        <span class="section-eyebrow">
+                            MOMENTS PRESERVED
+                        </span>
+
+                        <h2 class="section-title">
+                            A Thousand Memories.
+                            <span class="text-gold">
+                                One Legacy.
+                            </span>
+                        </h2>
+
+                        <p class="section-description">
+                            Some moments deserve more than a place
+                            in our camera roll. They deserve to be
+                            remembered, shared, and revisited.
+                            Explore our collection of photographs
+                            and relive the moments that matter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 PHOTO ALBUM
+            ====================================== -->
+            <section
+                class="section album-gallery-section"
+                id="album-gallery"
+            >
+
+                <div class="section-container">
+
+                    <!-- Album Header -->
+                    <div class="section-heading">
+
+                        <span class="section-eyebrow">
+                            THE GOLDEN ARCHIVE
+                        </span>
+
+                        <h2 class="section-title">
+                            Our Photo
+                            <span class="text-gold">
+                                Collection
+                            </span>
+                        </h2>
+
+                        <p class="section-description">
+                            Every frame holds a little piece
+                            of our story.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Album Information -->
+                    <div class="album-details">
+
+                        <div class="album-details-content">
+
+                            <span class="album-category">
+                                GOLDEN LEGACY
+                            </span>
+
+                            <h3 class="album-title">
+                                Moments Together
+                            </h3>
+
+                            <p class="album-description">
+                                Our adventures, celebrations,
+                                everyday moments, and the
+                                memories that connect us.
+                            </p>
+
+                        </div>
+
+                        <div class="album-details-meta">
+
+                            <span class="album-photo-count">
+                                <span
+                                    id="album-photo-count"
+                                    data-photo-count
+                                >6</span>
+                                Photographs
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Gallery Filters -->
+                    <div
+                        class="gallery-filters album-filters"
+                        role="group"
+                        aria-label="Filter album photographs"
+                    >
+
+                        <button
+                            class="gallery-filter active"
+                            type="button"
+                            data-filter="all"
+                            aria-pressed="true"
+                        >
+                            All Photos
+                        </button>
+
+                        <button
+                            class="gallery-filter"
+                            type="button"
+                            data-filter="adventures"
+                            aria-pressed="false"
+                        >
+                            Adventures
+                        </button>
+
+                        <button
+                            class="gallery-filter"
+                            type="button"
+                            data-filter="celebrations"
+                            aria-pressed="false"
+                        >
+                            Celebrations
+                        </button>
+
+                        <button
+                            class="gallery-filter"
+                            type="button"
+                            data-filter="everyday"
+                            aria-pressed="false"
+                        >
+                            Everyday Moments
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PHOTO GRID
+
+                         Replace the sample image paths
+                         with your actual photographs.
+                    ================================== -->
+                    <div
+                        class="gallery-grid album-grid"
+                        id="gallery-grid"
+                        data-gallery
+                    >
+
+                        <!-- Photo 01 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="adventures"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/events/2026/trips/photos/photo-01.webp"
+                                data-caption="An unforgettable adventure together"
+                                aria-label="View photograph 1"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/events/2026/trips/photos/photo-01.webp"
+                                        alt="Friends enjoying an adventure together"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    ADVENTURES
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    The Journey Together
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Photo 02 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="celebrations"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/events/2026/durga-puja/photos/photo-01.webp"
+                                data-caption="A celebration to remember"
+                                aria-label="View photograph 2"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/events/2026/durga-puja/photos/photo-01.webp"
+                                        alt="Friends celebrating together"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    CELEBRATIONS
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    Moments Worth Celebrating
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Photo 03 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="everyday"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/group/group-photo-01.webp"
+                                data-caption="Together, as always"
+                                aria-label="View photograph 3"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/group/group-photo-01.webp"
+                                        alt="Golden Legacy friends together"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    EVERYDAY MOMENTS
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    The Little Things
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Photo 04 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="adventures"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/events/2026/trips/photos/photo-02.webp"
+                                data-caption="Somewhere together"
+                                aria-label="View photograph 4"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/events/2026/trips/photos/photo-02.webp"
+                                        alt="Friends on a memorable trip"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    ADVENTURES
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    Somewhere Together
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Photo 05 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="celebrations"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/events/2026/saraswati-puja/photos/photo-01.webp"
+                                data-caption="A special day with special people"
+                                aria-label="View photograph 5"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/events/2026/saraswati-puja/photos/photo-01.webp"
+                                        alt="Friends celebrating Saraswati Puja"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    CELEBRATIONS
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    Together Through It All
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Photo 06 -->
+                        <article
+                            class="gallery-item album-photo-card"
+                            data-category="everyday"
+                        >
+
+                            <button
+                                class="gallery-image-button"
+                                type="button"
+                                data-lightbox-trigger
+                                data-image="../memories/group/group-photo-02.webp"
+                                data-caption="Another golden day"
+                                aria-label="View photograph 6"
+                            >
+
+                                <div class="gallery-image">
+
+                                    <img
+                                        src="../memories/group/group-photo-02.webp"
+                                        alt="Friends sharing a happy moment"
+                                        loading="lazy"
+                                    >
+
+                                    <span
+                                        class="gallery-image-overlay"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="gallery-zoom-icon">
+                                            +
+                                        </span>
+                                    </span>
+
+                                </div>
+
+                            </button>
+
+                            <div class="gallery-item-info">
+
+                                <span class="gallery-item-category">
+                                    EVERYDAY MOMENTS
+                                </span>
+
+                                <h3 class="gallery-item-title">
+                                    Another Golden Day
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Empty Gallery State -->
+                    <div
+                        class="gallery-empty-state"
+                        id="gallery-empty-state"
+                        hidden
+                    >
+                        <h3>No photographs found</h3>
+
+                        <p>
+                            There are no photographs in this category yet.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 BACK TO MEMORIES
+            ====================================== -->
+            <section class="section album-closing">
+
+                <div class="section-container">
+
+                    <div class="section-heading">
+
+                        <span class="section-eyebrow">
+                            EVERY MOMENT MATTERS
+                        </span>
+
+                        <h2 class="section-title">
+                            Our Memories.
+                            <span class="text-gold">
+                                Our Legacy.
+                            </span>
+                        </h2>
+
+                        <p class="section-description">
+                            The photographs may capture a moment,
+                            but the friendship is what makes
+                            it unforgettable.
+                        </p>
+
+                        <a
+                            href="memories.html"
+                            class="btn btn-primary"
+                        >
+                            Back to Memories
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================================
+             LIGHTBOX
+
+             Used by lightbox.js.
+        ========================================== -->
+        <div
+            class="lightbox"
+            id="lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Photograph viewer"
+            aria-hidden="true"
+        >
+
+            <div class="lightbox-backdrop" data-lightbox-close></div>
+
+            <div class="lightbox-content">
+
+                <!-- Close -->
+                <button
+                    class="lightbox-close"
+                    type="button"
+                    data-lightbox-close
+                    aria-label="Close photograph viewer"
+                >
+                    &times;
+                </button>
+
+
+                <!-- Previous -->
+                <button
+                    class="lightbox-prev"
+                    type="button"
+                    data-lightbox-prev
+                    aria-label="Previous photograph"
+                >
+                    &#10094;
+                </button>
+
+
+                <!-- Image -->
+                <figure class="lightbox-figure">
+
+                    <img
+                        class="lightbox-image"
+                        id="lightbox-image"
+                        src=""
+                        alt=""
+                    >
+
+                    <figcaption
+                        class="lightbox-caption"
+                        id="lightbox-caption"
+                    ></figcaption>
+
+                </figure>
+
+
+                <!-- Next -->
+                <button
+                    class="lightbox-next"
+                    type="button"
+                    data-lightbox-next
+                    aria-label="Next photograph"
+                >
+                    &#10095;
+                </button>
+
+
+                <!-- Counter -->
+                <div
+                    class="lightbox-counter"
+                    id="lightbox-counter"
+                    aria-live="polite"
+                >
+                    <span data-lightbox-current>1</span>
+                    <span aria-hidden="true"> / </span>
+                    <span data-lightbox-total>6</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+        <footer class="site-footer">
+
+            <div class="footer-container">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo"
+                >
+                    GOLDEN LEGACY
+                </a>
+
+                <p class="footer-description">
+                    Different people. Different journeys.
+                    One unforgettable connection.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="members.html">
+                        Members
+                    </a>
+
+                    <a href="memories.html">
+                        Memories
+                    </a>
+
+                    <a href="album.html" aria-current="page">
+                        Gallery
+                    </a>
+
+                    <a href="videos.html">
+                        Videos
+                    </a>
+
+                    <a href="about.html">
+                        Our Story
+                    </a>
+
+                </div>
+
+                <p class="footer-copyright">
+                    &copy;
+                    <span id="current-year" data-current-year></span>
+                    Golden Legacy. Made with friendship.
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../assets/js/loading-screen.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/navigation.js" defer></script>
+    <script src="../assets/js/gallery.js" defer></script>
+    <script src="../assets/js/lightbox.js" defer></script>
+    <script src="../assets/js/interactions.js" defer></script>
+
+</body>
+</html>

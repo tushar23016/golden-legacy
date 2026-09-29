@@ -1,0 +1,1056 @@
+
+/* =========================================================
+   GOLDEN LEGACY — RESPONSIVE STYLESHEET
+   File: assets/css/responsive.css
+
+   Compatible with:
+   - navigation.css
+   - navigation.js
+   - Homepage navigation markup
+
+   Supports:
+   - Desktop, laptop, tablet and mobile
+   - About, Memories, Gallery and Members pages
+   - Album, profile and video pages
+   - Touch devices and reduced-motion accessibility
+
+   Navigation classes:
+   .site-header
+   .header-container
+   .site-logo
+   .main-navigation
+   .navigation-list
+   .navigation-link
+   .header-action
+   .mobile-menu-toggle
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESPONSIVE FOUNDATION
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+main,
+section,
+article,
+aside,
+.container,
+.section-container {
+    min-width: 0;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   2. SHARED NAVIGATION
+   The primary navigation layout lives in navigation.css.
+   This section contains responsive-only adjustments.
+   ========================================================= */
+
+.site-header {
+    width: 100%;
+    max-width: 100%;
+    z-index: 1000;
+}
+
+.site-header .header-container {
+    width: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+}
+
+.site-header .site-logo {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.site-header .site-logo-image {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.site-header .site-logo-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.site-header .main-navigation {
+    min-width: 0;
+}
+
+.site-header .navigation-list {
+    min-width: 0;
+}
+
+.site-header .navigation-link {
+    white-space: nowrap;
+}
+
+.site-header .mobile-menu-toggle {
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.site-header .header-action {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   3. LARGE DESKTOP — 1440px AND ABOVE
+   ========================================================= */
+
+@media (min-width: 1440px) {
+
+    .container,
+    .section-container {
+        max-width: 1400px;
+        margin-inline: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(4.5rem, 7vw, 8rem);
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 4vw, 4.5rem);
+    }
+
+    .memory-grid,
+    .gallery-grid,
+    .video-grid {
+        gap: 2rem;
+    }
+
+}
+
+
+/* =========================================================
+   4. LAPTOPS AND SMALL DESKTOPS
+   1200px — 1439px
+   ========================================================= */
+
+@media (max-width: 1439px) {
+
+    .container,
+    .section-container {
+        width: min(100% - 64px, 1200px);
+        margin-inline: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(3.5rem, 6vw, 6rem);
+    }
+
+    .memory-grid,
+    .gallery-grid,
+    .video-grid {
+        gap: 1.5rem;
+    }
+
+    .members-3d-stage {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   5. TABLETS AND SMALL LAPTOPS
+   901px — 1199px
+   ========================================================= */
+
+@media (max-width: 1199px) {
+
+    .container,
+    .section-container {
+        width: min(100% - 48px, 1000px);
+        margin-inline: auto;
+    }
+
+    section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 7vw, 5.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    /* Navigation */
+
+    .site-header .header-container {
+        padding-inline: 1.5rem;
+    }
+
+    .site-header .navigation-list {
+        gap: clamp(0.8rem, 1.5vw, 1.25rem);
+    }
+
+    .site-header .navigation-link {
+        font-size: clamp(0.7rem, 1vw, 0.85rem);
+    }
+
+    /* Grids */
+
+    .memory-grid,
+    .gallery-grid,
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Members */
+
+    .members-3d-stage {
+        min-height: 600px;
+        perspective: 1000px;
+    }
+
+    .member-3d {
+        max-width: 85%;
+    }
+
+    /* Timeline */
+
+    .timeline {
+        max-width: 100%;
+    }
+
+    .timeline-item {
+        gap: 1.5rem;
+    }
+
+    /* Video */
+
+    .video-player,
+    .video-player-wrapper {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   6. TABLET AND MOBILE NAVIGATION
+   900px AND BELOW
+
+   Must match navigation.css and navigation.js.
+   The navigation menu is controlled by .active.
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .site-header .header-container {
+        width: 100%;
+        max-width: 100%;
+        min-height: 76px;
+        padding-inline: 1.25rem;
+        gap: 1rem;
+    }
+
+    .site-header .site-logo {
+        max-width: calc(100% - 70px);
+    }
+
+    .site-header .site-logo-image {
+        width: auto;
+        max-height: 48px;
+    }
+
+    .site-header .main-navigation {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        max-width: 100%;
+        max-height: calc(100vh - 76px);
+        max-height: calc(100dvh - 76px);
+
+        margin: 0;
+        padding: 1rem 1.5rem 1.5rem;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        background: rgba(7, 13, 25, 0.98);
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 1001;
+    }
+
+    .site-header .main-navigation.active {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .site-header .navigation-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+        width: 100%;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-header .navigation-link {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        min-height: 50px;
+        padding: 0.9rem 0;
+
+        white-space: normal;
+
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .site-header .header-action {
+        display: none;
+    }
+
+    .site-header .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+
+        margin-left: auto;
+        padding: 10px;
+
+        cursor: pointer;
+        touch-action: manipulation;
+
+        z-index: 1002;
+    }
+
+    .site-header .mobile-menu-toggle .menu-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        flex-shrink: 0;
+    }
+
+    body.nav-open {
+        overflow: hidden;
+        overscroll-behavior: none;
+    }
+
+    /* Main content */
+
+    section[id] {
+        scroll-margin-top: 85px;
+    }
+
+    /* About page */
+
+    .about-page .about-story-grid,
+    .about-page .about-meaning-grid,
+    .about-page .about-journey-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .about-page .about-story-visual,
+    .about-page .about-meaning-visual {
+        width: min(100%, 680px);
+        margin-inline: auto;
+    }
+
+    .about-page .about-story-image-wrapper {
+        aspect-ratio: 16 / 10;
+    }
+
+    /* Memories page */
+
+    body.memories-page > #site-wrapper > .site-header {
+        height: 80px;
+        min-height: 80px;
+    }
+
+    body.memories-page .site-header .header-container {
+        min-height: 80px;
+        padding-inline: 20px;
+    }
+
+    body.memories-page #site-wrapper > main {
+        padding-top: 80px;
+    }
+
+    /* Album and profile grids */
+
+    .album-page .gallery-grid,
+    .album-page .album-grid,
+    .member-profile-page .member-memory-gallery,
+    .member-profile-page .member-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   7. MOBILE LAYOUT
+   767px AND BELOW
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* Global spacing */
+
+    .container,
+    .section-container {
+        width: calc(100% - 36px);
+        margin-inline: auto;
+    }
+
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    /* Typography */
+
+    .hero-title {
+        font-size: clamp(2.5rem, 11vw, 4.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        overflow-wrap: break-word;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.15;
+    }
+
+    .hero-description,
+    .section-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .section-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+    }
+
+    /* Navigation */
+
+    .site-header .header-container {
+        min-height: 70px;
+        padding-inline: 1.125rem;
+    }
+
+    .site-header .main-navigation {
+        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
+    }
+
+    .site-header .site-logo {
+        max-width: calc(100% - 60px);
+    }
+
+    .site-header .site-logo-text {
+        font-size: clamp(0.9rem, 4vw, 1.15rem);
+    }
+
+    .site-header .mobile-menu-toggle {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    /* Hero */
+
+    .hero,
+    .hero-section,
+    .page-hero {
+        min-height: 75svh;
+        padding: 6rem 0 4rem;
+    }
+
+    .hero-content {
+        width: calc(100% - 36px);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn,
+    .hero-actions button {
+        min-height: 48px;
+    }
+
+    /* Grids */
+
+    .memory-grid,
+    .gallery-grid,
+    .video-grid,
+    .members-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .memory-card,
+    .gallery-item,
+    .video-card,
+    .member-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Images */
+
+    .memory-card img,
+    .gallery-item img,
+    .video-thumbnail img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Members 3D */
+
+    .members-3d-stage {
+        min-height: 520px;
+        height: 75svh;
+        max-height: 760px;
+        perspective: 800px;
+        overflow: clip;
+    }
+
+    .members-3d-world {
+        transform-style: preserve-3d;
+    }
+
+    .member-3d {
+        width: min(85vw, 400px);
+        max-width: 90%;
+    }
+
+    /* Timeline */
+
+    .timeline {
+        padding-inline: 1rem;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+    /* Gallery and video filters */
+
+    .gallery-filters,
+    .video-filters,
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .gallery-filters button,
+    .video-filters button,
+    .filter-buttons button {
+        min-height: 42px;
+        padding: 0.65rem 1rem;
+    }
+
+    /* Lightbox */
+
+    .lightbox,
+    .lightbox-overlay {
+        padding: 1rem;
+    }
+
+    .lightbox-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .lightbox-image {
+        max-height: 75svh;
+        object-fit: contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Video */
+
+    .video-player-wrapper,
+    .video-player {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-featured {
+        grid-template-columns: 1fr;
+    }
+
+    /* Buttons */
+
+    .btn,
+    .button {
+        max-width: 100%;
+    }
+
+    /* About page */
+
+    .about-page .about-story-section,
+    .about-page .about-meaning-section,
+    .about-page .about-journey-section,
+    .about-page .about-chapters-section,
+    .about-page .about-closing-section {
+        padding: 56px 18px;
+    }
+
+    .about-page .about-story-section .section-title,
+    .about-page .about-meaning-section .section-title,
+    .about-page .about-journey-section .section-title {
+        font-size: clamp(2rem, 8.5vw, 3.2rem);
+        line-height: 1.1;
+    }
+
+    .about-page .about-story-image-wrapper {
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-page .about-hero {
+        min-height: 72svh;
+        padding: 100px 20px 120px;
+    }
+
+    .about-page .about-hero-title {
+        font-size: clamp(2.65rem, 11vw, 4.25rem);
+        line-height: 1.02;
+    }
+
+    .about-page .about-hero-footer {
+        right: 20px;
+        left: 20px;
+        bottom: 22px;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        text-align: center;
+    }
+
+    /* Member profile */
+
+    .member-profile-page .member-profile-hero {
+        min-height: 0;
+        padding: 110px 18px 56px;
+    }
+
+    .member-profile-page .member-story-section,
+    .member-profile-page .member-memories-section,
+    .member-profile-page .member-gallery-section {
+        padding: 56px 18px;
+    }
+
+    .members-page .members-directory {
+        padding: 65px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   8. SMALL MOBILE DEVICES
+   480px AND BELOW
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container,
+    .section-container {
+        width: calc(100% - 28px);
+    }
+
+    section {
+        padding-top: 3.25rem;
+        padding-bottom: 3.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.2rem, 12vw, 3.5rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+    }
+
+    /* Navigation */
+
+    .site-header .header-container {
+        min-height: 64px;
+        padding-inline: 0.875rem;
+    }
+
+    .site-header .main-navigation {
+        max-height: calc(100vh - 64px);
+        max-height: calc(100dvh - 64px);
+        padding-inline: 1.125rem;
+    }
+
+    .site-header .site-logo-image {
+        max-height: 40px;
+    }
+
+    .site-header .site-logo-text {
+        font-size: clamp(0.8rem, 4vw, 1rem);
+        letter-spacing: 0.05em;
+    }
+
+    .site-header .mobile-menu-toggle {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+    /* Hero */
+
+    .hero,
+    .hero-section,
+    .page-hero {
+        min-height: 70svh;
+        padding-top: 5.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn,
+    .hero-actions button {
+        width: 100%;
+    }
+
+    /* Members 3D */
+
+    .members-3d-stage {
+        min-height: 450px;
+        height: 68svh;
+    }
+
+    .member-3d {
+        width: 90vw;
+    }
+
+    /* Grids */
+
+    .memory-grid,
+    .gallery-grid,
+    .video-grid {
+        gap: 1rem;
+    }
+
+    .memory-card,
+    .gallery-item,
+    .video-card {
+        border-radius: 12px;
+    }
+
+    .gallery-filters,
+    .video-filters {
+        gap: 0.5rem;
+    }
+
+    .gallery-filters button,
+    .video-filters button {
+        font-size: 0.8rem;
+        padding: 0.55rem 0.85rem;
+    }
+
+    /* About page */
+
+    .about-page .about-story-section,
+    .about-page .about-meaning-section,
+    .about-page .about-journey-section,
+    .about-page .about-chapters-section,
+    .about-page .about-closing-section {
+        padding: 44px 14px;
+    }
+
+    .about-page .about-hero-title {
+        font-size: clamp(2.35rem, 10.5vw, 3.25rem);
+    }
+
+    .about-page .about-story-image-wrapper {
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Album and profile */
+
+    .album-page .gallery-grid,
+    .album-page .album-grid,
+    .member-profile-page .member-memory-gallery,
+    .member-profile-page .member-gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .album-page .gallery-item.featured {
+        grid-column: auto;
+    }
+
+    .member-profile-page .member-details-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Memories */
+
+    body.memories-page .site-header .header-container {
+        padding-inline: 16px;
+    }
+
+    body.memories-page .site-header .site-logo {
+        font-size: clamp(15px, 4vw, 20px);
+    }
+
+}
+
+
+/* =========================================================
+   9. EXTRA SMALL DEVICES
+   360px AND BELOW
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .container,
+    .section-container {
+        width: calc(100% - 24px);
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .site-header .site-logo-text {
+        font-size: 0.8rem;
+        letter-spacing: 0.02em;
+    }
+
+    .site-header .mobile-menu-toggle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .members-3d-stage {
+        min-height: 400px;
+    }
+
+    .member-3d {
+        width: 94vw;
+    }
+
+}
+
+
+/* =========================================================
+   10. LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero,
+    .hero-section,
+    .page-hero {
+        min-height: 100svh;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .members-3d-stage {
+        height: 100svh;
+        min-height: 350px;
+    }
+
+    .site-header .main-navigation {
+        max-height: calc(100vh - 64px);
+        max-height: calc(100dvh - 64px);
+    }
+
+}
+
+
+/* =========================================================
+   11. TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .memory-card:hover,
+    .gallery-item:hover,
+    .video-card:hover,
+    .member-card:hover,
+    .album-card:hover {
+        transform: none;
+    }
+
+    .btn,
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button,
+    .btn,
+    .button {
+        touch-action: manipulation;
+    }
+
+    /* Do not require hover to access gallery controls. */
+
+    .gallery-overlay,
+    .gallery-view-button {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   12. REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .gallery-item.reveal,
+    .member-card.reveal,
+    .video-card.reveal,
+    .timeline-item.reveal {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+}

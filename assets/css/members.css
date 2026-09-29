@@ -1,0 +1,1137 @@
+
+/* =========================================================
+   GOLDEN LEGACY — MEMBERS
+   File: assets/css/members.css
+   Purpose: Member cards, profiles, and members section
+   Theme: Obsidian Black + Metallic Gold
+========================================================= */
+
+
+/* =========================================================
+   1. MEMBERS SECTION
+========================================================= */
+
+.members-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 6%;
+    overflow: hidden;
+    background: var(--color-background, #080808);
+    isolation: isolate;
+}
+
+.members-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(212, 175, 55, 0.07),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(212, 175, 55, 0.04),
+            transparent 35%
+        );
+}
+
+.members-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.members-header {
+    max-width: 750px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.members-header .section-eyebrow {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--color-gold, #d4af37);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
+
+.members-header .section-title {
+    margin-bottom: 24px;
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.members-header .section-title span {
+    color: var(--color-gold, #d4af37);
+}
+
+.members-header .section-description {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   2. MEMBERS GRID
+========================================================= */
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.member-card {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 255, 255, 0.012)
+    );
+
+    border: 1px solid rgba(212, 175, 55, 0.16);
+    border-radius: 18px;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+
+    transform-style: preserve-3d;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(212, 175, 55, 0.65);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(212, 175, 55, 0.08);
+}
+
+
+/* =========================================================
+   3. MEMBER IMAGE
+========================================================= */
+
+.member-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #111;
+}
+
+.member-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 45%,
+        rgba(0, 0, 0, 0.25) 70%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+}
+
+.member-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(35%);
+    transform: scale(1.001);
+
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1),
+        filter 0.8s ease;
+}
+
+.member-card:hover .member-image {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+}
+
+
+/* =========================================================
+   4. MEMBER NUMBER
+========================================================= */
+
+.member-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 44px;
+    height: 32px;
+    padding: 0 12px;
+
+    color: var(--color-gold, #d4af37);
+    background: rgba(8, 8, 8, 0.75);
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   5. MEMBER INFORMATION
+========================================================= */
+
+.member-info {
+    position: relative;
+    padding: 28px 26px 30px;
+}
+
+.member-role {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--color-gold, #d4af37);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.member-name {
+    margin: 0 0 14px;
+
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.member-description {
+    margin: 0 0 24px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   6. MEMBER PROFILE LINK
+========================================================= */
+
+.member-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--color-gold, #d4af37);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease,
+        gap 0.3s ease;
+}
+
+.member-link:hover {
+    gap: 18px;
+    color: #f5d76e;
+}
+
+.member-link span {
+    display: inline-block;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.member-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   7. GOLD BORDER HIGHLIGHT
+========================================================= */
+
+.member-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+
+    border: 1px solid transparent;
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    transition: border-color 0.4s ease;
+}
+
+.member-card:hover::before {
+    border-color: rgba(212, 175, 55, 0.25);
+}
+
+
+/* =========================================================
+   8. FEATURED MEMBER CARD
+========================================================= */
+
+.member-card.featured {
+    border-color: rgba(212, 175, 55, 0.5);
+
+    box-shadow:
+        0 0 35px rgba(212, 175, 55, 0.06);
+}
+
+.member-card.featured .member-number {
+    background: var(--color-gold, #d4af37);
+    color: #080808;
+    border-color: var(--color-gold, #d4af37);
+}
+
+
+/* =========================================================
+   9. MEMBER PROFILE PAGE
+========================================================= */
+
+.member-profile {
+    position: relative;
+    width: 100%;
+    padding: 100px 6%;
+    background: var(--color-background, #080808);
+}
+
+.member-profile-container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 80px;
+
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.member-profile-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+
+    background: #111;
+}
+
+.member-profile-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-profile-content {
+    min-width: 0;
+}
+
+.member-profile-content .member-role {
+    margin-bottom: 20px;
+}
+
+.member-profile-content .member-name {
+    margin-bottom: 24px;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+.member-profile-content .member-description {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+
+/* =========================================================
+   10. MEMBER SOCIAL LINKS
+========================================================= */
+
+.member-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.member-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: var(--color-gold, #d4af37);
+    background: rgba(212, 175, 55, 0.05);
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.member-social-link:hover {
+    color: #080808;
+    background: var(--color-gold, #d4af37);
+    border-color: var(--color-gold, #d4af37);
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   11. EMPTY / LOADING MEMBER STATES
+========================================================= */
+
+.members-loading {
+    display: grid;
+    place-items: center;
+    min-height: 250px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.members-empty {
+    grid-column: 1 / -1;
+    padding: 60px 20px;
+
+    color: var(--color-text-secondary, #a5a5a5);
+    text-align: center;
+
+    border: 1px dashed rgba(212, 175, 55, 0.25);
+    border-radius: 16px;
+}
+
+
+/* =========================================================
+   12. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .members-section {
+        padding: 100px 5%;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .members-header {
+        margin-bottom: 55px;
+    }
+
+    .member-profile-container {
+        gap: 45px;
+    }
+
+    .member-info {
+        padding: 24px 22px 26px;
+    }
+}
+
+
+/* =========================================================
+   13. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .members-section {
+        padding: 75px 5%;
+    }
+
+    .members-header {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .members-header .section-title {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+    }
+
+    .members-header .section-description {
+        font-size: 0.9rem;
+        margin-left: 0;
+    }
+
+    .members-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .member-card {
+        border-radius: 14px;
+    }
+
+    .member-image-wrapper {
+        aspect-ratio: 5 / 4;
+    }
+
+    .member-info {
+        padding: 24px 22px 26px;
+    }
+
+    .member-name {
+        font-size: 1.6rem;
+    }
+
+    .member-description {
+        font-size: 0.88rem;
+    }
+
+    .member-profile {
+        padding: 70px 5%;
+    }
+
+    .member-profile-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+    }
+
+    .member-profile-image {
+        max-width: 450px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .member-profile-content .member-name {
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+    .member-profile-content .member-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* =========================================================
+   14. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .member-card,
+    .member-image,
+    .member-link,
+    .member-link span,
+    .member-social-link {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+/* =========================================================
+   15. MEMORIES HERO — POSITIONING FIX
+========================================================= */
+
+.memories-hero {
+    min-height: 58svh;
+
+    align-items: flex-start;
+
+    padding:
+        clamp(80px, 10vh, 110px)
+        var(--hero-padding-inline)
+        60px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 40%,
+            rgba(212, 175, 55, 0.07),
+            transparent 60%
+        ),
+        #080808;
+}
+
+/* =========================================================
+   GOLDEN LEGACY — HTML COMPATIBILITY
+   Bridges the shared stylesheet to the current supplied pages.
+========================================================= */
+
+/* Homepage and directory use these existing class names. */
+.members-section,
+.members-directory,
+.members-introduction {
+    position: relative;
+    width: 100%;
+    background: var(--color-background, #080808);
+}
+
+.members-directory {
+    padding: 100px 6%;
+}
+
+.members-introduction {
+    padding: 90px 6% 40px;
+}
+
+.members-directory-header {
+    max-width: 850px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.members-directory-count {
+    color: var(--color-gold, #d4af37);
+    margin-top: 18px;
+    font-size: .9rem;
+}
+
+.members-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.member-card-image-link {
+    display: block;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.member-image-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #111;
+}
+
+.member-information {
+    position: relative;
+    padding: 26px;
+}
+
+.member-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-gold, #d4af37);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.member-profile-link:hover {
+    color: #f5d76e;
+    gap: 15px;
+}
+
+/* Directory page hero spacing below fixed navigation. */
+.members-page .members-hero,
+.members-page .page-hero {
+    min-height: 55vh;
+    padding-top: var(--nav-height, 88px);
+}
+
+/* Profile page uses a custom editorial layout rather than .member-profile. */
+.member-profile-page .member-profile-hero {
+    position: relative;
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 6% 80px;
+    overflow: hidden;
+    background: #080808;
+}
+
+.member-profile-hero-content,
+.member-story-content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1200px);
+    margin-inline: auto;
+}
+
+.member-profile-title {
+    color: var(--color-text-primary, #f5f5f5);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+}
+
+.member-profile-subtitle,
+.member-profile-intro,
+.member-story-description {
+    color: var(--color-text-secondary, #a5a5a5);
+    line-height: 1.9;
+}
+
+.member-story-section,
+.member-memories-section,
+.member-gallery-section {
+    padding: 90px 6%;
+    background: var(--color-background, #080808);
+}
+
+.member-story-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(30px, 6vw, 80px);
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.member-story-image-wrapper,
+.member-story-portrait {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,.25);
+    border-radius: 18px;
+}
+
+.member-story-image,
+.member-story-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 18px;
+}
+
+.member-detail-item {
+    padding: 20px;
+    border: 1px solid rgba(212,175,55,.16);
+    border-radius: 12px;
+    background: rgba(255,255,255,.025);
+}
+
+.member-detail-label {
+    display: block;
+    color: var(--color-gold, #d4af37);
+    font-size: .72rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.member-detail-value {
+    color: var(--color-text-primary, #f5f5f5);
+    overflow-wrap: anywhere;
+}
+
+.member-memory-gallery,
+.member-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 22px;
+}
+
+.member-memory-card,
+.member-gallery-item {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,.16);
+    border-radius: 14px;
+    background: rgba(255,255,255,.025);
+}
+
+.member-memory-image-wrapper {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.member-memory-image,
+.member-gallery-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.member-memory-card:hover img,
+.member-gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.member-memory-information {
+    padding: 20px;
+}
+
+.member-memory-category,
+.member-memory-date {
+    color: var(--color-gold, #d4af37);
+    font-size: .78rem;
+}
+
+.member-memory-title {
+    color: var(--color-text-primary, #f5f5f5);
+    margin-top: 8px;
+}
+
+.member-profile-social,
+.member-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.member-closing-section {
+    padding: 80px 6%;
+    text-align: center;
+    background: #0b0b0b;
+}
+
+@media (max-width: 900px) {
+    .members-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .member-story-layout { grid-template-columns: 1fr; }
+    .member-memory-gallery, .member-gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 600px) {
+    .members-directory, .members-introduction,
+    .member-story-section, .member-memories-section,
+    .member-gallery-section { padding: 65px 5%; }
+    .members-grid { grid-template-columns: 1fr; }
+    .member-image-frame { aspect-ratio: 5/4; }
+    .member-information { padding: 22px; }
+    .member-profile-page .member-profile-hero { min-height: 60vh; padding: 115px 5% 60px; }
+    .member-details-grid, .member-memory-gallery, .member-gallery-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .member-memory-image, .member-gallery-image { transition: none !important; }
+}
+
+
+/* =========================================================
+   GOLDEN LEGACY — FINAL HTML / ACCESSIBILITY COMPATIBILITY
+   Additive fixes for the supplied members, directory, and
+   member-profile markup. Original styling above is preserved.
+========================================================= */
+
+/* Ensure linked member cards inherit the card's visual treatment. */
+a.member-card,
+.member-card-image-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Make member-card links and images keyboard accessible. */
+.member-card a:focus-visible,
+.member-card-image-link:focus-visible,
+.member-profile-link:focus-visible,
+.member-link:focus-visible,
+.member-social-link:focus-visible {
+    outline: 2px solid var(--color-gold, #d4af37);
+    outline-offset: 4px;
+}
+
+/* Match the current member directory's image-frame markup. */
+.member-image-frame img,
+.member-card-image-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.member-card:hover .member-image-frame img,
+.member-card-image-link:hover img {
+    transform: scale(1.06);
+}
+
+/* Keep directory content above decorative pseudo-elements. */
+.members-directory,
+.members-introduction,
+.members-directory-header,
+.member-profile-hero-content,
+.member-story-content {
+    isolation: isolate;
+}
+
+/* Guard against long names, descriptions, and social URLs
+   overflowing narrow cards or profile layouts. */
+.member-name,
+.member-profile-title,
+.member-description,
+.member-profile-subtitle,
+.member-profile-intro,
+.member-story-description,
+.member-detail-value {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+/* Support common current markup aliases for member social icons. */
+.member-profile-social a,
+.member-social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    color: var(--color-gold, #d4af37);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease,
+                border-color 0.3s ease, transform 0.3s ease;
+}
+
+.member-profile-social a:hover,
+.member-social-links a:hover {
+    color: #080808;
+    background: var(--color-gold, #d4af37);
+    border-color: var(--color-gold, #d4af37);
+    transform: translateY(-3px);
+}
+
+/* Avoid hover-only movement on touch-first devices. */
+@media (hover: none) {
+    .member-card:hover,
+    .member-card:hover .member-image,
+    .member-card:hover .member-image-frame img,
+    .member-card-image-link:hover img {
+        transform: none;
+    }
+
+    .member-card:hover {
+        box-shadow: none;
+    }
+}
+
+/* Respect reduced-motion preferences and keep content visible. */
+@media (prefers-reduced-motion: reduce) {
+    .member-card,
+    .member-image,
+    .member-image-frame img,
+    .member-card-image-link img,
+    .member-profile-link,
+    .member-link,
+    .member-link span,
+    .member-social-link,
+    .member-profile-social a,
+    .member-social-links a {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .member-card:hover,
+    .member-card:hover .member-image,
+    .member-card:hover .member-image-frame img,
+    .member-card-image-link:hover img,
+    .member-profile-social a:hover,
+    .member-social-links a:hover {
+        transform: none !important;
+    }
+
+    .member-card,
+    .member-card.reveal,
+    .member-card.reveal.is-visible {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   16. FINAL RESPONSIVE / INTERACTION SAFEGUARDS
+   Additive compatibility fixes; original styling is preserved.
+========================================================= */
+
+/* Keep grid breakpoints consistent after the later compatibility
+   selectors, which otherwise override the earlier tablet rule. */
+@media (max-width: 1024px) {
+    .members-grid,
+    .member-memory-gallery,
+    .member-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .member-profile-container {
+        gap: clamp(28px, 5vw, 45px);
+    }
+}
+
+@media (max-width: 600px) {
+    .members-grid,
+    .member-memory-gallery,
+    .member-gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .members-directory-header {
+        text-align: left;
+    }
+
+    .members-directory-count {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Avoid flex/grid children forcing horizontal overflow. */
+.members-container,
+.members-grid,
+.member-profile-container,
+.member-story-layout,
+.member-details-grid,
+.member-memory-gallery,
+.member-gallery-grid,
+.member-profile-hero-content,
+.member-story-content,
+.member-information,
+.member-info {
+    min-width: 0;
+}
+
+.member-profile-page,
+.member-profile-hero,
+.member-story-section,
+.member-memories-section,
+.member-gallery-section,
+.members-directory,
+.members-introduction {
+    max-width: 100%;
+}
+
+/* Keep image frames predictable and prevent stretched image content. */
+.member-image-frame,
+.member-image-wrapper,
+.member-profile-image,
+.member-story-image-wrapper,
+.member-story-portrait,
+.member-memory-image-wrapper {
+    isolation: isolate;
+}
+
+.member-image-frame img,
+.member-card-image-link img,
+.member-memory-image,
+.member-gallery-image,
+.member-story-image,
+.member-story-portrait img,
+.member-profile-image img {
+    max-width: 100%;
+}
+
+/* Provide a visible keyboard focus state for linked cards and controls. */
+.member-card:focus-visible,
+.member-card-image-link:focus-visible,
+.member-profile-social a:focus-visible,
+.member-social-links a:focus-visible {
+    outline: 2px solid var(--color-gold, #d4af37);
+    outline-offset: 4px;
+}
+
+/* Hover effects only on devices that actually support hover. */
+@media (hover: hover) and (pointer: fine) {
+    .member-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .member-card:hover .member-image,
+    .member-card:hover .member-image-frame img,
+    .member-card-image-link:hover img {
+        transform: scale(1.05);
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .member-card:hover,
+    .member-card:hover .member-image,
+    .member-card:hover .member-image-frame img,
+    .member-card-image-link:hover img,
+    .member-memory-card:hover img,
+    .member-gallery-item:hover img {
+        transform: none;
+    }
+
+    .member-card:hover {
+        box-shadow: none;
+    }
+}
+
+/* Honor reduced motion for every animated member-related element. */
+@media (prefers-reduced-motion: reduce) {
+    .member-card,
+    .member-card::before,
+    .member-image,
+    .member-image-frame img,
+    .member-card-image-link img,
+    .member-memory-image,
+    .member-gallery-image,
+    .member-profile-link,
+    .member-link,
+    .member-link span,
+    .member-social-link,
+    .member-profile-social a,
+    .member-social-links a {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .member-card:hover,
+    .member-image,
+    .member-image-frame img,
+    .member-card-image-link img,
+    .member-memory-card:hover img,
+    .member-gallery-item:hover img,
+    .member-profile-social a:hover,
+    .member-social-links a:hover {
+        transform: none !important;
+    }
+}

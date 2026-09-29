@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#080808">
+    <meta name="description" content="Explore the unforgettable memories, adventures, celebrations, and moments of Golden Legacy.">
+
+    <title>Our Memories | Golden Legacy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <!-- =========================================
+     GOLDEN LEGACY — CSS STYLESHEETS
+     ========================================= -->
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Visual Effects & Animations -->
+    <link rel="stylesheet" href="../assets/css/3d-effects.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+
+    <!-- Navigation & Hero -->
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/hero.css">
+    
+    <!-- Page Components -->
+    <link rel="stylesheet" href="../assets/css/members.css">
+    <link rel="stylesheet" href="../assets/css/timeline.css">
+    <link rel="stylesheet" href="../assets/css/gallery.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/videos.css">
+
+    <!-- Responsive Design (keep last) -->
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body class="memories-page" id="top">
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen"
+         aria-label="Loading Golden Legacy">
+
+        <div class="loading-content">
+
+            <div class="loading-emblem">
+                <img
+                    src="../assets/images/branding/emblem.svg"
+                    alt="Golden Legacy Emblem"
+                    class="loading-logo"
+                >
+            </div>
+
+            <h2 class="loading-title">GOLDEN LEGACY</h2>
+
+            <p class="loading-subtitle">
+                EVERY MOMENT BECOMES A LEGACY
+            </p>
+
+            <div class="loading-progress">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Website Wrapper -->
+    <div id="site-wrapper">
+
+        <!-- Navigation -->
+        <header class="site-header" id="site-header">
+            <div class="header-container nav-container">
+                <a href="../index.html" class="site-logo" aria-label="Golden Legacy Home">
+                    <img src="../assets/images/branding/logo.svg"
+                         alt="Golden Legacy"
+                         class="site-logo-image">
+                    <span class="site-logo-text">Golden Legacy</span>
+                </a>
+
+                <nav class="main-navigation nav-links"
+                     id="main-navigation"
+                     aria-label="Main navigation">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                            <a href="../index.html" class="navigation-link">Home</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="members.html" class="navigation-link">Members</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="memories.html" class="navigation-link active" aria-current="page">Memories</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="album.html" class="navigation-link">Gallery</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="videos.html" class="navigation-link">Videos</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="about.html" class="navigation-link">Our Story</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <a href="album.html" class="header-action">
+                    <span>Explore Our Memories</span>
+                    <span class="header-action-icon" aria-hidden="true">↗</span>
+                </a>
+
+                <button class="mobile-menu-toggle nav-toggle"
+                        id="mobile-menu-toggle"
+                        type="button"
+                        aria-label="Toggle navigation menu"
+                        aria-controls="main-navigation"
+                        aria-expanded="false">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+            </div>
+        </header>
+
+
+        <!-- Main Content -->
+        <main>
+
+            <!-- Memories Hero -->
+            <section class="page-hero memories-hero">
+
+                <div class="hero-content">
+
+                    <span class="section-eyebrow">
+                        OUR JOURNEY • OUR MEMORIES
+                    </span>
+
+                    <h1 class="hero-title">
+                        Moments That
+                        <span class="text-gold">Last Forever.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Every photograph holds a story.
+                        Every memory brings us closer.
+                        These are the moments that made
+                        Golden Legacy what it is today.
+                    </p>
+
+                    <a href="#memory-collection"
+                       class="btn btn-primary">
+                        Explore Our Memories
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Memory Introduction -->
+            <section class="section memories-intro">
+
+                <div class="section-container">
+
+                    <span class="section-eyebrow">
+                        MORE THAN PHOTOGRAPHS
+                    </span>
+
+                    <h2 class="section-title">
+                        Our Story in
+                        <span class="text-gold">Every Frame.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        From ordinary days to unforgettable
+                        adventures, each moment has become
+                        a part of our shared story.
+                        This collection preserves the
+                        laughter, friendships, and experiences
+                        we never want to forget.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Memory Collection -->
+            <section class="section memory-collection"
+                     id="memory-collection">
+
+                <div class="section-container">
+
+                    <div class="section-heading">
+
+                        <span class="section-eyebrow">
+                            THE GOLDEN ARCHIVE
+                        </span>
+
+                        <h2 class="section-title">
+                            Memory <span class="text-gold">Collection</span>
+                        </h2>
+
+                        <p class="section-description">
+                            A collection of moments,
+                            preserved for years to come.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Memory Categories -->
+                    <div class="memory-filters gallery-filters"
+                         aria-label="Memory categories">
+
+                        <button class="memory-filter gallery-filter active"
+                                data-filter="all"
+                                aria-pressed="true">
+                            All Memories
+                        </button>
+
+                        <button class="memory-filter gallery-filter"
+                                data-filter="adventures"
+                                aria-pressed="false">
+                            Adventures
+                        </button>
+
+                        <button class="memory-filter gallery-filter"
+                                data-filter="celebrations"
+                                aria-pressed="false">
+                            Celebrations
+                        </button>
+
+                        <button class="memory-filter gallery-filter"
+                                data-filter="everyday"
+                                aria-pressed="false">
+                            Everyday Moments
+                        </button>
+
+                    </div>
+
+
+                    <!-- Memory Grid -->
+                    <div class="memory-grid gallery-grid">
+
+
+                        <!-- Memory 1 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="adventures">
+
+                            <a href="album.html?event=event-01"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-01.jpg"
+                                        alt="Friends enjoying an adventure together"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        ADVENTURES
+                                    </span>
+
+                                    <h3>
+                                        The Days We Will Never Forget
+                                    </h3>
+
+                                    <p>
+                                        Every adventure became
+                                        another story to remember.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Memory 2 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="celebrations">
+
+                            <a href="album.html?event=event-02"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-02.jpg"
+                                        alt="Friends celebrating a special occasion"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        CELEBRATIONS
+                                    </span>
+
+                                    <h3>
+                                        Moments Worth Celebrating
+                                    </h3>
+
+                                    <p>
+                                        The smiles, the laughter,
+                                        and the people who made
+                                        it special.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Memory 3 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="everyday">
+
+                            <a href="album.html?event=event-03"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-03.jpg"
+                                        alt="Friends spending time together"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        EVERYDAY MOMENTS
+                                    </span>
+
+                                    <h3>
+                                        The Little Things
+                                    </h3>
+
+                                    <p>
+                                        Sometimes the simplest
+                                        moments become our
+                                        favorite memories.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Memory 4 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="adventures">
+
+                            <a href="album.html?event=event-04"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-04.jpg"
+                                        alt="A memorable group trip"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        ADVENTURES
+                                    </span>
+
+                                    <h3>
+                                        Somewhere Together
+                                    </h3>
+
+                                    <p>
+                                        Different places,
+                                        unforgettable experiences,
+                                        one friendship.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Memory 5 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="celebrations">
+
+                            <a href="album.html?event=event-05"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-05.jpg"
+                                        alt="Friends sharing a happy moment"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        CELEBRATIONS
+                                    </span>
+
+                                    <h3>
+                                        Together Through It All
+                                    </h3>
+
+                                    <p>
+                                        Every milestone is
+                                        better when shared
+                                        with friends.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                        <!-- Memory 6 -->
+                        <article class="memory-card gallery-item reveal-up"
+                                 data-category="everyday">
+
+                            <a href="album.html?event=event-06"
+                               class="memory-card-link">
+
+                                <div class="memory-image">
+
+                                    <img
+                                        src="../assets/images/memories/memory-06.jpg"
+                                        alt="A candid moment between friends"
+                                        loading="lazy"
+                                    >
+
+                                    <span class="memory-overlay">
+                                        Explore Memory
+                                    </span>
+
+                                </div>
+
+                                <div class="memory-info">
+
+                                    <span class="memory-category">
+                                        EVERYDAY MOMENTS
+                                    </span>
+
+                                    <h3>
+                                        Just Another Golden Day
+                                    </h3>
+
+                                    <p>
+                                        Ordinary days.
+                                        Extraordinary friendships.
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Closing Section -->
+            <section class="section memories-closing">
+
+                <div class="section-container">
+
+                    <span class="section-eyebrow">
+                        OUR MEMORIES • OUR LEGACY
+                    </span>
+
+                    <h2 class="section-title">
+                        The Best Moments
+                        <span class="text-gold">
+                            Are Still Ahead.
+                        </span>
+                    </h2>
+
+                    <p class="section-description">
+                        Our story is still being written.
+                        Here is to the memories we have made
+                        and all the ones waiting for us.
+                    </p>
+
+                    <a href="members.html"
+                       class="btn btn-primary">
+                        Meet the Members
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="site-footer">
+
+            <div class="footer-container">
+
+                <a href="../index.html" class="footer-logo">
+                    GOLDEN LEGACY
+                </a>
+
+                <p class="footer-description">
+                    Different people. Different journeys.
+                    One unforgettable connection.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="../index.html">Home</a>
+
+                    <a href="members.html">Members</a>
+
+                    <a href="memories.html">Memories</a>
+
+                    <a href="videos.html">Videos</a>
+
+                    <a href="about.html">Our Story</a>
+
+                </div>
+
+                <p class="footer-copyright">
+                    &copy; <span id="current-year" data-current-year></span>
+                    Golden Legacy. Made with friendship.
+                </p>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../assets/js/loading-screen.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/navigation.js" defer></script>
+    <script src="../assets/js/hero-animation.js" defer></script>
+    <script src="../assets/js/scroll-engine.js" defer></script>
+    <script src="../assets/js/parallax.js" defer></script>
+    <script src="../assets/js/gallery.js" defer></script>
+    <script src="../assets/js/interactions.js" defer></script>
+
+</body>
+</html>

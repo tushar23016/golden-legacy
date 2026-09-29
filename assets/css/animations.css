@@ -1,0 +1,1104 @@
+
+/* =========================================================
+   GOLDEN LEGACY — ANIMATIONS
+   File: assets/css/animations.css
+
+   Includes:
+   1. Fade and reveal animations
+   2. Cinematic hero animations
+   3. Gold glow and shimmer effects
+   4. Scroll reveal states
+   5. Navigation and button interactions
+   6. Gallery and card animations
+   7. Loading and page transitions
+   8. Accessibility and responsive support
+========================================================= */
+
+
+/* =========================================================
+   01. ANIMATION VARIABLES
+========================================================= */
+
+:root {
+    --anim-fast: 0.3s;
+    --anim-normal: 0.6s;
+    --anim-slow: 1s;
+    --anim-cinematic: 1.5s;
+
+    --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+    --gold-glow-soft:
+        0 0 15px rgba(212, 175, 55, 0.15);
+
+    --gold-glow-medium:
+        0 0 25px rgba(212, 175, 55, 0.3);
+
+    --gold-glow-strong:
+        0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+
+/* =========================================================
+   02. KEYFRAMES — BASIC MOTION
+========================================================= */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+}
+
+
+/* =========================================================
+   03. ANIMATION UTILITY CLASSES
+========================================================= */
+
+.animate-fade-in {
+    animation: fade-in var(--anim-normal) var(--ease-out) both;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up var(--anim-slow) var(--ease-cinematic) both;
+}
+
+.animate-fade-in-down {
+    animation: fade-in-down var(--anim-slow) var(--ease-cinematic) both;
+}
+
+.animate-fade-in-left {
+    animation: fade-in-left var(--anim-slow) var(--ease-cinematic) both;
+}
+
+.animate-fade-in-right {
+    animation: fade-in-right var(--anim-slow) var(--ease-cinematic) both;
+}
+
+.animate-scale-in {
+    animation: scale-in var(--anim-normal) var(--ease-cinematic) both;
+}
+
+
+/* =========================================================
+   04. STAGGERED ANIMATIONS
+========================================================= */
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+.delay-800 {
+    animation-delay: 0.8s;
+}
+
+.delay-1000 {
+    animation-delay: 1s;
+}
+
+
+/* =========================================================
+   05. CINEMATIC HERO ANIMATIONS
+========================================================= */
+
+@keyframes hero-title-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes hero-subtitle-reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+        letter-spacing: 0.35em;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.15em;
+    }
+}
+
+@keyframes hero-content-reveal {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes hero-light-reveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-title-reveal {
+    animation: hero-title-reveal 1.4s var(--ease-cinematic) both;
+}
+
+.hero-subtitle-reveal {
+    animation: hero-subtitle-reveal 1.2s var(--ease-cinematic) both;
+    animation-delay: 0.3s;
+}
+
+.hero-content-reveal {
+    animation: hero-content-reveal 1.5s var(--ease-cinematic) both;
+    animation-delay: 0.2s;
+}
+
+.hero-light-reveal {
+    animation: hero-light-reveal 2s var(--ease-cinematic) both;
+}
+
+
+/* =========================================================
+   06. GOLD SHIMMER EFFECT
+========================================================= */
+
+@keyframes gold-shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.gold-shimmer {
+    background: linear-gradient(
+        110deg,
+        #8a6710 0%,
+        #d4af37 25%,
+        #fff2a6 50%,
+        #d4af37 75%,
+        #8a6710 100%
+    );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation: gold-shimmer 5s linear infinite;
+}
+
+
+/* =========================================================
+   07. GOLD GLOW EFFECTS
+========================================================= */
+
+@keyframes gold-pulse {
+    0%,
+    100% {
+        box-shadow: var(--gold-glow-soft);
+    }
+
+    50% {
+        box-shadow: var(--gold-glow-strong);
+    }
+}
+
+@keyframes gold-text-glow {
+    0%,
+    100% {
+        text-shadow:
+            0 0 8px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        text-shadow:
+            0 0 20px rgba(212, 175, 55, 0.6),
+            0 0 35px rgba(212, 175, 55, 0.2);
+    }
+}
+
+.gold-glow {
+    animation: gold-pulse 4s ease-in-out infinite;
+}
+
+.gold-text-glow {
+    animation: gold-text-glow 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   08. AMBIENT BACKGROUND ANIMATIONS
+========================================================= */
+
+@keyframes ambient-light {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.6;
+    }
+}
+
+@keyframes ambient-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.ambient-light {
+    animation: ambient-light 8s ease-in-out infinite;
+}
+
+.ambient-float {
+    animation: ambient-float 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   09. SCROLL REVEAL
+========================================================= */
+
+/*
+   Elements remain hidden until JavaScript adds
+   the .is-visible class.
+
+   Use this class only for elements that your
+   scroll observer will reveal.
+*/
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.9s var(--ease-cinematic),
+        transform 0.9s var(--ease-cinematic);
+
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    will-change: auto;
+}
+
+.reveal-left {
+    opacity: 0;
+
+    transform: translateX(-40px);
+
+    transition:
+        opacity 0.9s var(--ease-cinematic),
+        transform 0.9s var(--ease-cinematic);
+}
+
+.reveal-left.is-visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+
+    transform: translateX(40px);
+
+    transition:
+        opacity 0.9s var(--ease-cinematic),
+        transform 0.9s var(--ease-cinematic);
+}
+
+.reveal-right.is-visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+
+    transform: scale(0.9);
+
+    transition:
+        opacity 1s var(--ease-cinematic),
+        transform 1s var(--ease-cinematic);
+}
+
+.reveal-scale.is-visible {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   10. NAVIGATION ANIMATIONS
+========================================================= */
+
+@keyframes nav-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.site-header {
+    animation: nav-reveal 0.8s var(--ease-cinematic) both;
+}
+
+.site-nav a {
+    position: relative;
+}
+
+.site-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold-3d-mid, #d4af37),
+        transparent
+    );
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: transform 0.4s var(--ease-cinematic);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   11. BUTTON INTERACTIONS
+========================================================= */
+
+.btn,
+button {
+    transition:
+        color var(--anim-fast) ease,
+        background-color var(--anim-fast) ease,
+        border-color var(--anim-fast) ease,
+        box-shadow var(--anim-fast) ease,
+        transform var(--anim-fast) ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* =========================================================
+   12. CARD ANIMATIONS
+========================================================= */
+
+@keyframes card-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-reveal {
+    animation: card-reveal 0.9s var(--ease-cinematic) both;
+}
+
+.card-hover {
+    transition:
+        transform 0.6s var(--ease-cinematic),
+        box-shadow 0.6s ease,
+        border-color 0.6s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+
+/* =========================================================
+   13. GALLERY IMAGE ANIMATIONS
+========================================================= */
+
+@keyframes image-reveal {
+    from {
+        opacity: 0;
+        transform: scale(1.08);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.gallery-reveal {
+    animation: image-reveal 1.2s var(--ease-cinematic) both;
+}
+
+.gallery-image {
+    overflow: hidden;
+}
+
+.gallery-image img {
+    transition:
+        transform 1s var(--ease-cinematic),
+        filter 0.8s ease;
+}
+
+.gallery-image:hover img {
+    transform: scale(1.07);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================================
+   14. LIGHTBOX ANIMATIONS
+========================================================= */
+
+@keyframes lightbox-open {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes lightbox-close {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+.lightbox.is-open {
+    animation: fade-in 0.4s ease both;
+}
+
+.lightbox-content {
+    animation: lightbox-open 0.5s var(--ease-cinematic) both;
+}
+
+
+/* =========================================================
+   15. LOADING SCREEN ANIMATIONS
+========================================================= */
+
+@keyframes loader-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-progress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes loader-pulse {
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+.loading-logo {
+    animation: loader-pulse 2s ease-in-out infinite;
+}
+
+.loading-progress span {
+    animation: loader-progress 4s var(--ease-out) both;
+}
+
+.loading-screen.loaded {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+/* =========================================================
+   16. PAGE TRANSITIONS
+========================================================= */
+
+@keyframes page-enter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-enter {
+    animation: page-enter 0.8s var(--ease-cinematic) both;
+}
+
+
+/* =========================================================
+   17. SCROLL INDICATOR
+========================================================= */
+
+@keyframes scroll-indicator {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+
+.scroll-indicator span {
+    animation: scroll-indicator 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   18. ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1;
+
+        transform: none;
+
+        will-change: auto;
+    }
+
+}
+
+
+/* =========================================================
+   19. RESPONSIVE ANIMATIONS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+        transform: translateY(20px);
+    }
+
+    .reveal.is-visible,
+    .reveal-left.is-visible,
+    .reveal-right.is-visible {
+        transform: translateY(0);
+    }
+
+    .ambient-float {
+        animation-duration: 8s;
+    }
+
+    .gold-glow {
+        animation-duration: 6s;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .card-hover:hover {
+        transform: translateY(-3px);
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+}
+
+
+/* =========================================================
+   20. GOLDEN LEGACY HTML / JAVASCRIPT COMPATIBILITY
+   Additive compatibility rules; original animation rules retained.
+========================================================= */
+
+/* The supplied pages use .navbar and .nav-links rather than
+   .site-header and .site-nav. */
+.navbar {
+    animation: nav-reveal 0.8s var(--ease-cinematic) both;
+}
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold-3d-mid, #d4af37),
+        transparent
+    );
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s var(--ease-cinematic);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+/* Match the gallery markup used by the pages. */
+.gallery-item img,
+.gallery-image,
+.gallery-image img {
+    backface-visibility: hidden;
+}
+
+.gallery-item img {
+    transition:
+        transform 1s var(--ease-cinematic),
+        filter 0.8s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.045);
+    filter: brightness(1.06);
+}
+
+/* The scroll engine reveals these elements by adding .is-visible.
+   Keep directional reveal transforms intact on small screens. */
+@media (max-width: 768px) {
+    .reveal-left {
+        transform: translateX(-20px);
+    }
+
+    .reveal-right {
+        transform: translateX(20px);
+    }
+
+    .reveal-left.is-visible,
+    .reveal-right.is-visible {
+        transform: translateX(0);
+    }
+}
+
+/* If JavaScript is unavailable or motion is reduced, don't leave
+   reveal elements permanently transparent. */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale,
+    .card-reveal,
+    .gallery-reveal {
+        opacity: 1;
+        transform: none;
+        filter: none;
+        animation: none !important;
+        transition: none !important;
+        will-change: auto;
+    }
+
+    .gold-shimmer,
+    .gold-glow,
+    .gold-text-glow,
+    .ambient-light,
+    .ambient-float,
+    .loading-logo,
+    .scroll-indicator span {
+        animation: none !important;
+    }
+}
+
+/* Avoid hover lift on touch devices, where hover can remain stuck. */
+@media (hover: none) {
+    .card-hover:hover,
+    .btn:hover,
+    .gallery-image:hover img,
+    .gallery-item:hover img {
+        transform: none;
+        filter: none;
+    }
+}
+
+
+
+/* =========================================================
+   21. FINAL GOLDEN LEGACY SAFETY PATCH
+   Corrects reduced-motion behavior, touch interactions,
+   reveal visibility, and animation/transform conflicts.
+========================================================= */
+
+/* Keep hidden reveal elements from remaining invisible when
+   the browser has no IntersectionObserver/scroll script support.
+   JavaScript-driven pages may add .js-reveal-ready to <html>
+   when the reveal observer has been initialized. */
+html:not(.js-reveal-ready) .reveal,
+html:not(.js-reveal-ready) .reveal-left,
+html:not(.js-reveal-ready) .reveal-right,
+html:not(.js-reveal-ready) .reveal-scale {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+}
+
+/* Directional reveal utilities retain their intended direction
+   on desktop and mobile. */
+@media (max-width: 768px) {
+    .reveal-left {
+        transform: translateX(-20px);
+    }
+
+    .reveal-right {
+        transform: translateX(20px);
+    }
+
+    .reveal-left.is-visible,
+    .reveal-right.is-visible {
+        transform: translateX(0);
+    }
+}
+
+/* Reduced motion: remove motion and reveal all content.
+   This block intentionally overrides earlier accessibility
+   declarations that only shortened animation duration. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+        scroll-snap-type: none !important;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale,
+    .card-reveal,
+    .gallery-reveal {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+
+    .gold-shimmer,
+    .gold-glow,
+    .gold-text-glow,
+    .ambient-light,
+    .ambient-float,
+    .loading-logo,
+    .scroll-indicator span {
+        animation: none !important;
+    }
+
+    .hero-title-reveal,
+    .hero-subtitle-reveal,
+    .hero-content-reveal,
+    .hero-light-reveal,
+    .page-enter {
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* Touch-first devices should not retain hover states or lifts. */
+@media (hover: none), (pointer: coarse) {
+    .card-hover:hover,
+    .btn:hover,
+    .gallery-image:hover img,
+    .gallery-item:hover img,
+    .gallery-3d .gallery-item:hover,
+    .card-3d:hover,
+    .timeline-3d .timeline-item:hover {
+        transform: none;
+        filter: none;
+    }
+
+    .card-hover:hover,
+    .card-3d:hover {
+        box-shadow: none;
+    }
+}
+
+/* Make keyboard focus visible for interactive navigation and
+   controls without depending on hover animation. */
+.site-nav a:focus-visible,
+.nav-links a:focus-visible,
+.btn:focus-visible,
+button:focus-visible,
+.gallery-item:focus-visible,
+.gallery-image:focus-visible {
+    outline: 2px solid var(--gold-3d-mid, #d4af37);
+    outline-offset: 4px;
+}
+
+/* Avoid the generic button transition from animating layout
+   properties; keep transitions limited to visual properties. */
+.btn,
+button {
+    transition:
+        color var(--anim-fast) ease,
+        background-color var(--anim-fast) ease,
+        border-color var(--anim-fast) ease,
+        box-shadow var(--anim-fast) ease,
+        transform var(--anim-fast) ease;
+}
+
+/* Prevent animation fill states from keeping hidden overlays
+   interactive after they have been closed. */
+.lightbox:not(.is-open) {
+    pointer-events: none;
+}
+
+.lightbox.is-open {
+    pointer-events: auto;
+}
+
+/* Respect reduced motion while preserving the loading screen's
+   hidden end state when the application adds .loaded. */
+@media (prefers-reduced-motion: reduce) {
+    .loading-screen.loaded {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
